@@ -1,0 +1,1170 @@
+@import "wp";
+@import "normalize";
+
+// Variables:
+	// colors: 
+	$bg-color:#fffdf5;
+	$header-color:white;
+	$main-bg:white;
+	$sidebar-bg:white;
+	$home-main-bg: #333;
+	$accent-color:#7D9D6C;
+	$link-color: #7D9D6C; // BF4C40(red)
+
+
+	// widths:
+	$wrap-width: 95%;
+	$gutter: 3%;
+	$main-width: 70%;
+	$sidebar-width: 26%;
+
+	$home-gutter: 3%;
+
+	// nav:
+	$nav-height: 80px;
+
+	// fonts:
+	$fonts-headings: 'Ubuntu Condensed', serif;//'Ubuntu Condensed', sans-serif;
+	$fonts-body: 'Buenard', serif;//'Habibi', serif;
+
+// Functions:
+
+// Mixins:
+@mixin transition ($length,$anim,$type:all) {
+	-webkit-transition: $type $length $anim;
+	-moz-transition: $type $length $anim;
+	-o-transition: $type $length $anim;
+	-ms-transition: $type $length $anim;
+}
+
+@mixin border-radius ($tl:5px,$tr:5px,$br:5px,$bl:5px) {
+	border-radius: $tl $tr $br $bl;
+}
+
+@mixin gradient ($top,$bottom) {
+	/* Safari 5.1+, Mobile Safari, Chrome 10+ */
+   background-image: -webkit-linear-gradient(top, $top, $bottom); 
+
+   /* Firefox 3.6+ */
+   background-image: -moz-linear-gradient(top, $top, $bottom);
+
+}
+
+@mixin selection ($color,$bg) {
+	::selection { color: $color; background: $bg}
+	::-moz-selection { color: $color; background: $bg}
+	::-webkit-selection { color: $color; background: $bg}
+}
+
+@mixin arrow-left ($bg,$border,$border-color) {
+	a {
+		float: right;
+		position: relative;
+		text-decoration: none;
+		padding: 0 .5em;
+		border-left: 5px solid $border-color;
+		background: $bg;
+		color: white;
+		@include transition(.1s,ease,padding);
+
+		&:before, &:after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			width: 0;
+			height: 0;
+		}
+
+		&:before {
+			left: -12px;
+			/* triangle: */
+			border-top: $border solid transparent;
+			border-bottom: $border solid transparent;
+			border-right: $border solid $border-color;
+	        /* Pull-up */
+	        margin-top: -$border;
+		}
+
+		&:after {
+			/* Smaller and different position triangle */
+	        left: -5px;
+	        border-top: ($border - 2px) solid transparent;
+	        border-bottom: ($border - 2px) solid transparent;
+	        border-right: ($border - 2px) solid $bg;
+	        margin-top: -($border - 2px);
+		}
+
+		&:hover {
+			background: lighten($bg,10);
+			padding: 0 .75em;
+			&:after {
+				border-right-color: lighten($bg,10);
+			}
+		}
+	}
+}
+
+@mixin arrow-top ($bg,$border,$border-color,$height) {
+	&:before, &:after {
+		content: "";
+		position: relative;
+		top: -$height;
+		width: 0;
+		height: 0;
+	}
+
+	&:before {
+        left: 50%;
+		/* triangle: */
+		border-top: $border solid transparent;
+		border-right: $border solid transparent;
+		border-left: $border solid transparent;
+		border-bottom: $border solid $border-color;
+        /* Pull-up */
+        margin-left: -$border;
+	}
+
+	&:after {
+		/* Smaller and different position triangle */
+        left: -50%;
+        top: -($height - $border + 2px);
+        border-top: ($border - 2px) solid transparent;
+        border-right: ($border - 2px) solid transparent;
+		border-left: ($border - 2px) solid transparent;
+        border-bottom: ($border - 2px) solid $bg;
+        margin-right: -($border - 2px);
+	}
+}
+
+@mixin typo($size) {
+	font-size: $size;
+	line-height: 1.65em;
+	margin: .25em 0;
+}
+
+/* General styles: */
+@include selection(#FCF2C5,#BF4C40);
+
+a:focus {
+	outline: 0;
+}
+
+body {
+	scroll-y: auto;
+	background: url(../../images/texture.png) $bg-color;
+
+	// Type:
+	font-family: $fonts-body;
+	@include typo(16px);
+}
+
+* img {
+	max-width: 100%;
+}
+
+hr {
+	width: auto;
+	height: 1px;
+	border-top: 1px solid white;
+	border-bottom: 1px solid black;
+	opacity: .15;
+}
+
+a:link, a:visited {
+	color: $link-color;
+}
+
+a:hover {
+	color: darken($link-color,10);
+}
+
+h1, h2, h3 {
+	//font-family: 'Cabin Condensed', sans-serif;
+	//font-family: 'Boogaloo', cursive;
+	font-family: $fonts-headings;
+	line-height: 1em;
+	letter-spacing: -.05em;
+	margin: .5em 0;
+}
+
+h1 {
+	a {
+		text-decoration: none;
+	}
+}
+
+h2 {
+	font-weight: 300; // uses Ubuntu Book because of weight=300
+}
+
+article {
+	overflow: auto;
+}
+
+#logo {
+
+	// Type:
+	font-family: 'Ubuntu', sans-serif;
+	//font-family: 'Sansita One', cursive;
+	font-size: 46px;
+	letter-spacing: -12px;
+	text-indent: -12px; //should be the same value as the letter-spacing so the text is still centered
+	text-decoration: none;
+}
+
+.page-wrap {
+	width: $wrap-width;
+	max-width: 1280px;
+	overflow: auto;
+	margin: 0 auto;
+
+	@media screen and (max-width: 720px) {
+		width: auto;
+	}
+}
+
+/* Search: */
+.search {
+	@include border-radius(1em,1em,1em,1em);
+	border: 2px solid #ccc;
+	padding: .25em 1em;
+	overflow: hidden;
+
+	.searchbox {
+		float: left;
+		border: 0 none;
+		width: 80%;
+		margin: 0;
+		padding: 0;
+
+		&:focus {
+			outline:0;
+		}
+	}
+
+	.searchbtn {
+		float:left;
+		width: 20%;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+/* Social Media: */
+nav.social {
+	float: right;
+	line-height: $nav-height;
+	ul {
+		margin:0;
+		padding:0;
+
+		li {
+			vertical-align: middle;
+		}
+	}
+}
+
+.twitter {
+	display: inline-block;
+	padding-left: 30px;
+	background: url(../../images/twitter.png) left center no-repeat;
+}
+
+/* Header styles: */
+header {
+	display: block;
+	z-index: 9999;
+
+	nav.main {
+		ul {
+			margin: 0;
+			padding: 0;
+			height: $nav-height;
+			overflow: hidden;
+			float: right;
+		}
+
+		li {
+			display: block;
+			float: left;
+			height: $nav-height;
+			overflow: hidden;
+
+			a {
+				display: block;
+				position: relative; //so I can change the position on :active state
+				height: $nav-height;
+				padding: 0 1em;
+				overflow: hidden;
+
+				// Type:
+				font-family: 'Ubuntu', sans-serif;
+				font-size: 20px;
+				line-height: $nav-height;
+				text-transform: uppercase;
+				text-decoration: none;
+
+				h5 {
+					display: block;
+					padding: 0;
+					margin: 0;
+					height: $nav-height;
+					min-width: 45px;
+
+					// Type:
+					text-align: center;
+					line-height: $nav-height;
+					text-shadow: 0px 1px 3px rgba(darken($accent-color,20),.25);
+
+					@include transition(.2s,ease);
+				}
+
+				&:active {
+					top: 3px;
+				}
+
+				&:hover h5 {
+					margin-top: -$nav-height;
+					-webkit-transform: rotate(-90deg);
+					-moz-transform: rotate(-90deg);
+					-o-transform: rotate(-90deg);
+					-ms-transform: rotate(-90deg);
+					opacity: 0;
+				}
+
+				div {
+					line-height: $nav-height;
+					height: $nav-height;
+					min-width: 45px;
+					opacity: 0;
+					//border-top: 5px solid white;
+
+					//@include arrow-top(#ddd,9px,white,$nav-height);
+
+					-webkit-transform: rotate(90deg);
+					-moz-transform: rotate(90deg);
+					-o-transform: rotate(90deg);
+					-ms-transform: rotate(90deg);
+					@include transition(.3s,ease);					
+				}
+
+				&:hover div {
+					opacity: 1;
+					-webkit-transform: rotate(0deg);
+					-moz-transform: rotate(0deg);
+					-o-transform: rotate(0deg);
+					-ms-transform: rotate(0deg);
+				}
+			}
+
+
+			// *** these must be in the same order as the main navigation:
+			&:nth-child(1) a div {
+				background: url(../../images/icon-home.png) center center no-repeat;
+			}
+
+			&:nth-child(2) a div {
+				background: url(../../images/icon-blog.png) center center no-repeat;
+			}
+
+			&:nth-child(3) a div {
+				background: url(../../images/icon-work.png) center center no-repeat;
+			}
+
+			&:nth-child(4) a div {
+				background: url(../../images/icon-contact.png) center center no-repeat;
+			}
+		}
+	}
+
+}
+
+/* Main Content styles: */
+#main {
+	float: left;
+	width: $main-width;
+	padding: 0 ($gutter/2);
+	overflow: auto;
+	background: $main-bg;
+
+	article {
+		margin-top: 2em;
+
+		p {
+			@include typo(2em);
+		}
+	}
+
+	@media screen and (max-width: 720px) {
+		float: none;
+		width: auto;
+	}
+}
+
+/* Sidebar styles: */
+#sidebar {
+	float: right;
+	width: $sidebar-width - $gutter;
+	padding: 0 ($gutter/2);
+	overflow: auto;
+	background: $sidebar-bg;
+	@include transition(.25s,ease);
+
+	// Type:
+
+	@media screen and (max-width: 720px) {
+		float: none;
+		width: auto;
+
+		// Type:
+		font-size: 80%;
+
+		p {
+			display: none;
+		}
+	}
+
+	
+	h1 {
+		padding: 0 0 0 10px;
+		line-height: 2;
+		background-color: $accent-color;
+
+		// Type:
+		font-size: 110%;
+		color: white;
+
+		@include arrow-left(#333,9px,white); //styles any anchor tags in this nest for the arrow
+	}
+
+	h2 {
+		// Type:
+		font-family: 'Ubuntu Condensed', sans-serif;
+		font-style: normal;
+
+		a {
+			text-decoration: none;
+		}
+	}
+
+	h3 {
+		// Type:
+		font-size: 85%;
+		font-family: 'Ubuntu Condensed', sans-serif;
+	}
+
+	div {
+		margin-top: 1em;
+		padding-bottom: 1em;
+		border-bottom: 1px solid #aaa;
+
+		&:last-child {
+			border-bottom: 0px none;
+		}
+	}
+
+	p {
+		@include typo(2em);
+	}
+
+	.blogroll {
+		a {display: block;}
+	}
+}
+
+/* Footer styles: */
+footer {
+	clear: both;
+	background: url(../../images/texture-dark.png) $home-main-bg;
+	border-top: 4px solid $accent-color;
+
+	.footer-content {
+		padding: 1em;
+
+		// Type:
+		color: white;
+
+		nav {
+			display: inline-block;
+			float: left;
+			margin: 0 2em;
+
+			ul {
+				margin: 0;
+				padding: 0;
+			}
+		}
+	}
+}
+
+.featured {
+	overflow: auto;
+	color: $bg-color;
+	
+	background: url(../../images/texture-dark.png) $home-main-bg;
+	
+	border-top: 4px solid $accent-color;
+	border-bottom: 4px solid $accent-color;
+}
+
+/* Home Content styles: */
+.home-intro {
+	padding: 1em ($home-gutter/2);
+
+	/* Type; */
+	font-family: 'Ubuntu', sans-serif;
+
+	h1 {
+		margin: .25em 0;
+
+		// Type:
+		text-transform: uppercase;
+
+		text-shadow: 1px 1px 0px black,2px 2px 0px rgba($accent-color,.5);			
+	}
+
+	h2 {
+		margin: .25em 0;
+		color: lighten($accent-color,20);
+	}
+
+}
+
+.home-featured {
+	border: 1px solid rgba(white,.1);
+	margin-top: 1em;
+	// @include border-radius(1em,1em,1em,1em);
+	// background: rgba(black,.1);
+	overflow: auto;
+	padding: 0;
+
+	> article {
+		float: left;
+		width: 33% - $home-gutter;
+		padding: 5.5em ($home-gutter/2) 0 ($home-gutter/2);
+
+		h1 {
+			text-align: center;
+			margin: .5em 0;
+			text-transform: uppercase;
+		}
+
+		@media screen and (max-width: 600px) {
+			float: none;
+			width: auto;
+		}
+
+		hgroup {
+			h1 {
+				font-size: 1.5em;
+				text-transform: none;
+				text-shadow: none;
+				text-align: left;
+			}
+
+			h2 {
+				font-size: 1em;
+				font-style: none;
+			}
+		}
+
+		article {
+			margin-top: 1em;
+		}
+	}
+
+	.blog-preview {
+		background: url(../../images/preview-bg-blog.png) center top no-repeat;
+	}
+
+	.work-preview {
+		background: url(../../images/preview-bg-work.png) center top no-repeat;
+	}
+
+	.contact-preview {
+		background: url(../../images/preview-bg-contact.png) center top no-repeat;
+	}
+
+	.work-thumb {
+		margin: 1em 0;
+		text-align: center;
+		
+		a {
+			opacity: 0.8;
+			@include transition(.2s,ease);
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+
+}
+
+/* Gallery: */
+.gallery {
+	clear:both;
+	
+	.gallery-item {
+		margin: 2em 0;
+		
+		.gallery-info {
+			float: right;
+			width: 45%;
+			padding: 0 2.4%;
+			border-left: 1px solid #aaa;
+
+			@media screen and (max-width: 680px) {
+				float: none;
+				width: auto;
+				border-left: none;
+			}
+
+			div {
+				// float: left;
+				// width: 31%;
+				// padding: 0 1%;
+
+				@media screen and (max-width: 680px) {
+					float: none;
+					width: auto;
+				}
+			}
+		}
+
+		.gallery-media {
+			float: left;
+			width: 45%;
+			padding: 0 2.4%;
+
+			@media screen and (max-width: 680px) {
+				float: none;
+				width: auto;
+			}
+
+			a {
+				opacity: 0.7;
+
+				@include transition(.5s,ease);
+
+				&:hover {
+					opacity: 1;
+					img {box-shadow: 0px 0px 5px rgba(black,.4);}
+				}
+			}
+		}
+	}
+}
+
+/* Animations: ========================================================================================= */
+
+.anim {
+
+	// Type:
+	color: white;
+
+	.anim-section {
+		overflow: hidden;
+		padding: 1em 4em;
+		
+	}
+
+	img {
+		max-width: 100%;
+	}
+
+	h1 {
+		margin: 0;//.15em 0;
+
+		// Type:
+		line-height: 1;
+		font-family: 'Ubuntu Condensed', sans-serif;
+		font-size: 46px;
+		text-transform: uppercase;
+
+		span {
+			padding-right: .25em;
+			border-right: 1px solid rgba(white,.25);
+			color: lighten($accent-color,15);
+			text-shadow: none;
+		}
+	}
+
+	h2 {
+		color: #ccc;
+		margin: .25em 0;
+		font-style: italic;
+	}
+
+	p {
+		color: lighten($accent-color,15);
+		font-size: 18px;
+	}
+}
+
+/* Screen Images animation: */
+$duration: 6s;
+$repeat: infinite;
+$timing: ease;
+$delay: 0s;
+
+.screens {
+	overflow: auto;
+	padding: 2em 1em;
+
+	.screens-imgs {
+		float: right;
+		position: relative;
+		overflow: hidden;
+		width: 60%;
+		height: 6em;
+
+		@media screen and (max-width: 600px) {
+			float: none;
+			width: 100%;
+		}
+	}
+
+	.screens-info {
+		float: left;
+		width: 40%;
+
+		@media screen and (max-width: 600px) {
+			float: none;
+			width: 100%;
+		}
+	}
+
+	.screen-desktop {
+		position: absolute;
+
+		-webkit-animation-name: SlideIn;
+		-webkit-animation-duration: $duration;
+		-webkit-animation-iteration-count: $repeat;
+		-webkit-animation-timing-function: $timing;
+
+		-moz-animation-name: SlideIn;
+		-moz-animation-duration: $duration;
+		-moz-animation-iteration-count: $repeat;
+		-moz-animation-timing-function: $timing;
+
+	}
+	.screen-tablet {
+		position: absolute;
+
+		-webkit-animation-name: SlideIn;
+		-webkit-animation-duration: $duration;
+		-webkit-animation-iteration-count: $repeat;
+		-webkit-animation-timing-function: $timing;
+
+		-moz-animation-name: SlideIn;
+		-moz-animation-duration: $duration;
+		-moz-animation-iteration-count: $repeat;
+		-moz-animation-timing-function: $timing;
+	}
+	.screen-mobile {
+		position: absolute;
+
+		-webkit-animation-name: SlideIn;
+		-webkit-animation-duration: $duration;
+		-webkit-animation-iteration-count: $repeat;
+		-webkit-animation-timing-function: $timing;
+
+		-moz-animation-name: SlideIn;
+		-moz-animation-duration: $duration;
+		-moz-animation-iteration-count: $repeat;
+		-moz-animation-timing-function: $timing;
+	}
+	.screen-arrows {
+		position: absolute;
+
+		-webkit-animation-name: Point;
+		-webkit-animation-duration: 1s;
+		-webkit-animation-iteration-count: $repeat;
+		-webkit-animation-timing-function: $timing;
+		-webkit-animation-direction: alternate;
+
+		-moz-animation-name: Point;
+		-moz-animation-duration: 1s;
+		-moz-animation-iteration-count: $repeat;
+		-moz-animation-timing-function: $timing;
+		-moz-animation-direction: alternate;
+	}
+}
+
+@-webkit-keyframes SlideIn { // webkit
+	0% {
+		opacity: 0;
+		left: -100%;
+		-webkit-transform: scaleX(2.5);
+	}
+
+	7% {
+		opacity: 1;
+		left: 0;
+		-webkit-transform: scaleX(1);
+	}
+
+	9% {
+		left: 10px;
+	}
+
+	13%, 95% {
+		left: 0;
+	}
+
+	97% {
+		left: -5%;
+		opacity: 1;
+		-webkit-transform: scaleX(1);
+	}
+
+	100% {
+		left: 100%;
+		opacity: 0;
+		-webkit-transform: scaleX(2);
+	}
+}
+
+@-moz-keyframes SlideIn { // firefox
+	0% {
+		opacity: 0;
+		left: -100%;
+		-moz-transform: scaleX(2.5);
+	}
+
+	7% {
+		opacity: 1;
+		left: 0;
+		-moz-transform: scaleX(1);
+	}
+
+	9% {
+		left: 10px;
+	}
+
+	13%, 95% {
+		left: 0;
+	}
+
+	97% {
+		left: -5%;
+		opacity: 1;
+		-moz-transform: scaleX(1);
+	}
+
+	100% {
+		left: 100%;
+		opacity: 0;
+		-moz-transform: scaleX(2);
+	}
+}
+
+@-webkit-keyframes Point { // webkit
+	0% {
+		opacity: 0.5;
+		-webkit-transform: scaleX(0.95);
+	}
+
+	100% {
+		opacity: 1;
+		-webkit-transform: scaleX(1);
+	}	
+}
+
+@-moz-keyframes Point { // firefox
+	0% {
+		opacity: 0.5;
+		left: 5px;
+	}
+
+	100% {
+		opacity: 1;
+		left: 0;
+	}	
+}
+
+/* Connect Dots animations: */
+.connect {
+	
+	.connect-info {
+		width: 60%;
+		float: right;
+
+		@media screen and (max-width: 600px) {
+			float: none;
+			width: 100%;
+		}
+	}
+
+	.connect-imgs {
+		float: left;
+		position: relative;
+		overflow: hidden;
+		width: 40%;
+		height: 7em;
+
+		@media screen and (max-width: 600px) {
+			float: none;
+			width: 100%;
+		}
+	}
+
+	.connect-dots {
+		position: absolute;
+
+		-webkit-animation-name: GrowIn;
+		-webkit-animation-duration: 7s;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-timing-function: ease-in;
+
+		-moz-animation-name: GrowIn;
+		-moz-animation-duration: 7s;
+		-moz-animation-iteration-count: infinite;
+		-moz-animation-timing-function: ease-in;
+	}
+
+	.connect-lines {
+		position: absolute;
+
+		-webkit-animation-name: ConnectFadeIn;
+		-webkit-animation-duration: 7s;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-timing-function: ease-in;
+		-webkit-animation-delay:1.5s;
+		-webkit-animation-direction: alternate;
+
+		-moz-animation-name: ConnectFadeIn;
+		-moz-animation-duration: 7s;
+		-moz-animation-iteration-count: infinite;
+		-moz-animation-timing-function: ease-in;
+		-moz-animation-delay:1.5s;
+		-moz-animation-direction: alternate;
+	}
+
+	.connect-bg {
+		position: absolute;
+
+		-webkit-animation-name: ConnectRotate;
+		-webkit-animation-duration: 20s;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-timing-function: linear;
+
+		-moz-animation-name: ConnectRotate;
+		-moz-animation-duration: 20s;
+		-moz-animation-iteration-count: infinite;
+		-moz-animation-timing-function: linear;
+	}
+}
+
+@-webkit-keyframes GrowIn { // webkit
+	0%,100% {
+		-webkit-transform: scale(0.1);
+		opacity: 0;
+	}
+
+	15%,95% {
+		-webkit-transform: scale(1);
+		opacity: 1;
+		-webkit-animation-timing-function: ease-in;
+	}
+}
+
+@-moz-keyframes GrowIn { // firefox
+	0%,100% {
+		-moz-transform: scale(0.1);
+		opacity: 0;
+	}
+
+	15%,95% {
+		-moz-transform: scale(1);
+		opacity: 1;
+		-moz-animation-timing-function: ease-in;
+	}
+}
+
+@-webkit-keyframes ConnectFadeIn { // webkit
+	0%,100% {
+		opacity: 0;
+	}
+
+	10%,95% {
+		opacity: 1;
+	}
+}
+
+@-moz-keyframes ConnectFadeIn { // firefox
+	0%,100% {
+		opacity: 0;
+	}
+
+	10%,95% {
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes ConnectRotate { // webkit
+	0% {
+		-webkit-transform: rotate(360deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(0deg);
+	}
+}
+
+@-moz-keyframes ConnectRotate { // firefox
+	0% {
+		-moz-transform: rotate(360deg);
+	}
+
+	100% {
+		-moz-transform: rotate(0deg);
+	}
+}
+
+/* Engage animations: */
+.engage {
+	clear: both;
+	
+	.engage-info {
+		float: left;
+		width: 40%;
+
+		@media screen and (max-width: 600px) {
+			float: none;
+			width: 100%;
+		}
+	}
+
+	.engage-imgs {
+		float: right;
+		width: 60%;
+		height: 6em;
+		position: relative;
+		overflow: hidden;
+
+		@media screen and (max-width: 600px) {
+			float: none;
+			width: 100%;
+		}
+	}
+
+	.engage-magnets {
+		position: absolute;
+
+		-webkit-animation-name: SpinIn;
+		-webkit-animation-duration: .8s;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-timing-function: ease-out;
+		-webkit-animation-direction: alternate;
+
+		-moz-animation-name: SpinIn;
+		-moz-animation-duration: .8s;
+		-moz-animation-iteration-count: infinite;
+		-moz-animation-timing-function: ease-out;
+		-moz-animation-direction: alternate;
+	}
+
+	.engage-bolts {
+		position: absolute;
+
+		-webkit-animation-name: Spark;
+		-webkit-animation-duration: .7s;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-timing-function: ease-in;
+
+		-moz-animation-name: Spark;
+		-moz-animation-duration: .7s;
+		-moz-animation-iteration-count: infinite;
+		-moz-animation-timing-function: ease-in;
+	}
+
+	.engage-people {
+		position: absolute;
+
+		-webkit-animation-name: GetPulled;
+		-webkit-animation-duration: .8s;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-timing-function: ease-out;
+		-webkit-animation-direction: alternate;
+
+		-moz-animation-name: GetPulled;
+		-moz-animation-duration: .8s;
+		-moz-animation-iteration-count: infinite;
+		-moz-animation-timing-function: ease-out;
+		-moz-animation-direction: alternate;
+	}
+}
+
+@-webkit-keyframes SpinIn { // webkit
+	0% {
+		left: 10px;
+	}
+
+	100% {
+		left: 0;
+	}
+}
+
+@-moz-keyframes SpinIn { // firefox
+	0% {
+		left: 10px;
+	}
+
+	100% {
+		left: 0;
+	}
+}
+
+@-webkit-keyframes GetPulled { // webkit
+	0% {
+		opacity: 0.7;
+		left: 15px;
+		-webkit-transform: rotate(1deg);
+	}
+
+	100% {
+		opacity: 1;
+		left: 0;
+		-webkit-transform: rotate(0deg);
+	}
+}
+
+@-moz-keyframes GetPulled { // firefox
+	0% {
+		opacity: 0.7;
+		left: 15px;
+		-moz-transform: rotate(1deg);
+	}
+
+	100% {
+		opacity: 1;
+		left: 0;
+		-moz-transform: rotate(0deg);
+	}
+}
+
+@-webkit-keyframes Spark { // webkit
+	0% {
+		opacity: 0.7;
+		-webkit-transform: scale(1);
+	}
+
+	100% {
+		opacity: 1;
+		-webkit-transform: scale(1.01);
+	}
+}
+
+@-moz-keyframes Spark { //firefox
+	0% {
+		opacity: 0.7;
+		-moz-transform: scale(1);
+	}
+
+	100% {
+		opacity: 1;
+		-moz-transform: scale(1.01);
+	}
+}

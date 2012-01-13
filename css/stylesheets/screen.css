@@ -1,0 +1,1607 @@
+/*
+Theme Name: Demetri Ganoff Theme
+Description: Custom-made for Demetri Ganoff's portfolio website
+
+Author: Demetri Ganoff
+Version: 0.1
+Tags: modern, css3, circles, green, black, dark, textured
+*/
+/* normalize.css 2011-11-04T15:38 UTC - http://github.com/necolas/normalize.css */
+/* =============================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/*
+ * Corrects block display not defined in IE6/7/8/9 & FF3
+ */
+/* line 20, ../sass/_normalize.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+
+/*
+ * Corrects inline-block display not defined in IE6/7/8/9 & FF3
+ */
+/* line 30, ../sass/_normalize.scss */
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+/*
+ * Prevents modern browsers from displaying 'audio' without controls
+ */
+/* line 40, ../sass/_normalize.scss */
+audio:not([controls]) {
+  display: none;
+}
+
+/*
+ * Addresses styling for 'hidden' attribute not present in IE7/8/9, FF3, S4
+ * Known issue: no IE6 support
+ */
+/* line 49, ../sass/_normalize.scss */
+[hidden] {
+  display: none;
+}
+
+/* =============================================================================
+   Base
+   ========================================================================== */
+/*
+ * 1. Corrects text resizing oddly in IE6/7 when body font-size is set using em units
+ *    http://clagnut.com/blog/348/#c790
+ * 2. Keeps page centred in all browsers regardless of content height
+ * 3. Prevents iOS text size adjust after orientation change, without disabling user zoom
+ *    www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
+ */
+/* line 66, ../sass/_normalize.scss */
+html {
+  font-size: 100%;
+  /* 1 */
+  overflow-y: scroll;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 3 */
+  -ms-text-size-adjust: 100%;
+  /* 3 */
+}
+
+/*
+ * Addresses margins handled incorrectly in IE6/7
+ */
+/* line 77, ../sass/_normalize.scss */
+body {
+  margin: 0;
+}
+
+/* 
+ * Addresses font-family inconsistency between 'textarea' and other form elements.
+ */
+/* line 89, ../sass/_normalize.scss */
+body,
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif;
+}
+
+/* =============================================================================
+   Links
+   ========================================================================== */
+/*
+ * Addresses outline displayed oddly in Chrome
+ */
+/* line 102, ../sass/_normalize.scss */
+a:focus {
+  outline: thin dotted;
+}
+
+/*
+ * Improves readability when focused and also mouse hovered in all browsers
+ * people.opera.com/patrickl/experiments/keyboard/test
+ */
+/* line 112, ../sass/_normalize.scss */
+a:hover,
+a:active {
+  outline: 0;
+}
+
+/* =============================================================================
+   Typography
+   ========================================================================== */
+/*
+ * Neutralise smaller font-size in 'section' and 'article' in FF4+, Chrome, S5
+ */
+/* line 125, ../sass/_normalize.scss */
+h1 {
+  font-size: 2em;
+}
+
+/*
+ * Addresses styling not present in IE7/8/9, S5, Chrome
+ */
+/* line 133, ../sass/_normalize.scss */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/*
+ * Addresses style set to 'bolder' in FF3+, S4/5, Chrome
+*/
+/* line 142, ../sass/_normalize.scss */
+b,
+strong {
+  font-weight: bold;
+}
+
+/* line 146, ../sass/_normalize.scss */
+blockquote {
+  margin: 1em 40px;
+}
+
+/*
+ * Addresses styling not present in S5, Chrome
+ */
+/* line 154, ../sass/_normalize.scss */
+dfn {
+  font-style: italic;
+}
+
+/*
+ * Addresses styling not present in IE6/7/8/9
+ */
+/* line 162, ../sass/_normalize.scss */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/*
+ * Corrects font family set oddly in IE6, S4/5, Chrome
+ * en.wikipedia.org/wiki/User:Davidgothberg/Test59
+ */
+/* line 175, ../sass/_normalize.scss */
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, serif;
+  _font-family: 'courier new', monospace;
+  font-size: 1em;
+}
+
+/*
+ * Improves readability of pre-formatted text in all browsers
+ */
+/* line 185, ../sass/_normalize.scss */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/*
+ * 1. Addresses CSS quotes not supported in IE6/7
+ * 2. Addresses quote property not supported in S4
+ */
+/* 1 */
+/* line 198, ../sass/_normalize.scss */
+q {
+  quotes: none;
+}
+
+/* 2 */
+/* line 205, ../sass/_normalize.scss */
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+/* line 210, ../sass/_normalize.scss */
+small {
+  font-size: 75%;
+}
+
+/*
+ * Prevents sub and sup affecting line-height in all browsers
+ * gist.github.com/413930
+ */
+/* line 220, ../sass/_normalize.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 227, ../sass/_normalize.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 231, ../sass/_normalize.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* =============================================================================
+   Lists
+   ========================================================================== */
+/* line 241, ../sass/_normalize.scss */
+ul,
+ol {
+  margin-left: 0;
+  padding: 0 0 0 40px;
+}
+
+/* line 246, ../sass/_normalize.scss */
+dd {
+  margin: 0 0 0 40px;
+}
+
+/* line 251, ../sass/_normalize.scss */
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none;
+}
+
+/* =============================================================================
+   Embedded content
+   ========================================================================== */
+/*
+ * 1. Removes border when inside 'a' element in IE6/7/8/9, FF3
+ * 2. Improves image quality when scaled in IE7
+ *    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
+ */
+/* line 267, ../sass/_normalize.scss */
+img {
+  border: 0;
+  /* 1 */
+  -ms-interpolation-mode: bicubic;
+  /* 2 */
+}
+
+/*
+ * Corrects overflow displayed oddly in IE9 
+ */
+/* line 276, ../sass/_normalize.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* =============================================================================
+   Figures
+   ========================================================================== */
+/*
+ * Addresses margin not present in IE6/7/8/9, S5, O11
+ */
+/* line 289, ../sass/_normalize.scss */
+figure {
+  margin: 0;
+}
+
+/* =============================================================================
+   Forms
+   ========================================================================== */
+/*
+ * Corrects margin displayed oddly in IE6/7
+ */
+/* line 302, ../sass/_normalize.scss */
+form {
+  margin: 0;
+}
+
+/*
+ * Define consistent border, margin, and padding
+ */
+/* line 310, ../sass/_normalize.scss */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/*
+ * 1. Corrects color not being inherited in IE6/7/8/9
+ * 2. Corrects alignment displayed oddly in IE6/7
+ */
+/* line 321, ../sass/_normalize.scss */
+legend {
+  border: 0;
+  /* 1 */
+  *margin-left: -7px;
+  /* 2 */
+}
+
+/*
+ * 1. Corrects font size not being inherited in all browsers
+ * 2. Addresses margins set differently in IE6/7, FF3+, S5, Chrome
+ * 3. Improves appearance and consistency in all browsers
+ */
+/* line 335, ../sass/_normalize.scss */
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  vertical-align: baseline;
+  /* 3 */
+  *vertical-align: middle;
+  /* 3 */
+}
+
+/*
+ * Addresses FF3/4 setting line-height on 'input' using !important in the UA stylesheet
+ */
+/* line 347, ../sass/_normalize.scss */
+button,
+input {
+  line-height: normal;
+  /* 1 */
+}
+
+/*
+ * 1. Improves usability and consistency of cursor style between image-type 'input' and others
+ * 2. Corrects inability to style clickable 'input' types in iOS
+ * 3. Removes inner spacing in IE7 without affecting normal text inputs
+ *    Known issue: inner spacing remains in IE6
+ */
+/* line 361, ../sass/_normalize.scss */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  /* 1 */
+  -webkit-appearance: button;
+  /* 2 */
+  *overflow: visible;
+  /* 3 */
+}
+
+/*
+ * 1. Addresses box sizing set to content-box in IE8/9
+ * 2. Removes excess padding in IE8/9
+ */
+/* line 373, ../sass/_normalize.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/*
+ * 1. Addresses appearance set to searchfield in S5, Chrome
+ * 2. Addresses box-sizing set to border-box in S5, Chrome (include -moz to future-proof)
+ */
+/* line 383, ../sass/_normalize.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/*
+ * Removes inner padding that is displayed in S5, Chrome on OS X
+ */
+/* line 394, ../sass/_normalize.scss */
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+ * Removes inner padding and border in FF3+
+ * www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
+ */
+/* line 404, ../sass/_normalize.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/*
+ * 1. Removes default vertical scrollbar in IE6/7/8/9
+ * 2. Improves readability and alignment in all browsers
+ */
+/* line 414, ../sass/_normalize.scss */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+
+/* =============================================================================
+   Tables
+   ========================================================================== */
+/* 
+ * Remove most spacing between table cells
+ */
+/* line 428, ../sass/_normalize.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* General styles: */
+/* line 54, ../sass/screen.scss */
+::selection {
+  color: #fcf2c5;
+  background: #bf4c40;
+}
+
+/* line 55, ../sass/screen.scss */
+::-moz-selection {
+  color: #fcf2c5;
+  background: #bf4c40;
+}
+
+/* line 56, ../sass/screen.scss */
+::-webkit-selection {
+  color: #fcf2c5;
+  background: #bf4c40;
+}
+
+/* line 148, ../sass/screen.scss */
+a:focus {
+  outline: 0;
+}
+
+/* line 152, ../sass/screen.scss */
+body {
+  scroll-y: auto;
+  background: url(../../images/texture.png) #fffdf5;
+  font-family: "Buenard", serif;
+  font-size: 16px;
+  line-height: 1.65em;
+  margin: .25em 0;
+}
+
+/* line 161, ../sass/screen.scss */
+* img {
+  max-width: 100%;
+}
+
+/* line 165, ../sass/screen.scss */
+hr {
+  width: auto;
+  height: 1px;
+  border-top: 1px solid white;
+  border-bottom: 1px solid black;
+  opacity: .15;
+}
+
+/* line 173, ../sass/screen.scss */
+a:link, a:visited {
+  color: #7d9d6c;
+  text-decoration: none;
+}
+
+/* line 178, ../sass/screen.scss */
+a:hover {
+  color: #648056;
+}
+
+/* line 182, ../sass/screen.scss */
+h1, h2, h3 {
+  font-family: "Ubuntu Condensed", serif;
+  line-height: 1em;
+  letter-spacing: -0.05em;
+  margin: .5em 0;
+}
+
+/* line 192, ../sass/screen.scss */
+h1 a {
+  text-decoration: none;
+}
+
+/* line 197, ../sass/screen.scss */
+h2 {
+  font-weight: 300;
+  color: #999;
+}
+
+/* line 202, ../sass/screen.scss */
+section {
+  overflow: auto;
+}
+
+/* line 206, ../sass/screen.scss */
+article {
+  overflow: auto;
+}
+/* line 209, ../sass/screen.scss */
+article a {
+  border-bottom: 1px solid #ccc;
+}
+/* line 212, ../sass/screen.scss */
+article a:hover {
+  border-bottom: 1px solid #7d9d6c;
+}
+
+/* line 218, ../sass/screen.scss */
+#logo {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 46px;
+  letter-spacing: -12px;
+  text-indent: -12px;
+  text-decoration: none;
+}
+
+/* line 229, ../sass/screen.scss */
+.page-wrap {
+  width: 95%;
+  max-width: 1280px;
+  overflow: auto;
+  margin: 0 auto;
+}
+@media screen and (max-width: 720px) {
+  /* line 229, ../sass/screen.scss */
+  .page-wrap {
+    width: auto;
+  }
+}
+
+/* Search: */
+/* line 241, ../sass/screen.scss */
+.search {
+  border-radius: 1em 1em 1em 1em;
+  border: 2px solid #ccc;
+  padding: .25em 1em;
+  overflow: hidden;
+}
+/* line 247, ../sass/screen.scss */
+.search .searchbox {
+  float: left;
+  border: 0 none;
+  width: 90%;
+  margin: 0;
+  padding: 0;
+}
+/* line 254, ../sass/screen.scss */
+.search .searchbox:focus {
+  outline: 0;
+}
+/* line 259, ../sass/screen.scss */
+.search .searchbtn {
+  float: right;
+  width: 10%;
+  margin: 0;
+  padding: 0;
+  background: url(../../images/search.png) center center no-repeat;
+  border: 0 none;
+  text-indent: -9999px;
+}
+
+/* Social Media: */
+/* line 271, ../sass/screen.scss */
+nav.social {
+  float: right;
+  line-height: 80px;
+}
+/* line 274, ../sass/screen.scss */
+nav.social ul {
+  margin: 0;
+  padding: 0;
+}
+/* line 278, ../sass/screen.scss */
+nav.social ul li {
+  vertical-align: middle;
+}
+
+/* line 284, ../sass/screen.scss */
+.twitter {
+  display: inline-block;
+  padding-left: 30px;
+  background: url(../../images/twitter.png) left center no-repeat;
+}
+
+/* Header styles: */
+/* line 291, ../sass/screen.scss */
+header {
+  display: block;
+  z-index: 9999;
+}
+/* line 296, ../sass/screen.scss */
+header nav.main ul {
+  margin: 0;
+  padding: 0;
+  height: 80px;
+  overflow: hidden;
+  float: right;
+}
+/* line 304, ../sass/screen.scss */
+header nav.main li {
+  display: block;
+  float: left;
+  height: 80px;
+  overflow: hidden;
+}
+/* line 310, ../sass/screen.scss */
+header nav.main li a {
+  display: block;
+  position: relative;
+  height: 80px;
+  padding: 0 1em;
+  overflow: hidden;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  line-height: 80px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+/* line 324, ../sass/screen.scss */
+header nav.main li a h5 {
+  display: block;
+  padding: 0;
+  margin: 0;
+  height: 80px;
+  min-width: 45px;
+  text-align: center;
+  line-height: 80px;
+  text-shadow: 0px 1px 3px rgba(126, 82, 38, 0.25);
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+}
+/* line 339, ../sass/screen.scss */
+header nav.main li a:active {
+  top: 3px;
+}
+/* line 343, ../sass/screen.scss */
+header nav.main li a:hover h5 {
+  margin-top: -80px;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  opacity: 0;
+}
+/* line 352, ../sass/screen.scss */
+header nav.main li a div {
+  line-height: 80px;
+  height: 80px;
+  min-width: 45px;
+  opacity: 0;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+}
+/* line 368, ../sass/screen.scss */
+header nav.main li a:hover div {
+  opacity: 1;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+}
+/* line 379, ../sass/screen.scss */
+header nav.main li:nth-child(1) a div {
+  background: url(../../images/icon-home.png) center center no-repeat;
+}
+/* line 383, ../sass/screen.scss */
+header nav.main li:nth-child(2) a div {
+  background: url(../../images/icon-blog.png) center center no-repeat;
+}
+/* line 387, ../sass/screen.scss */
+header nav.main li:nth-child(3) a div {
+  background: url(../../images/icon-work.png) center center no-repeat;
+}
+/* line 391, ../sass/screen.scss */
+header nav.main li:nth-child(4) a div {
+  background: url(../../images/icon-contact.png) center center no-repeat;
+}
+
+/* Main Content styles: */
+/* line 400, ../sass/screen.scss */
+#main {
+  float: left;
+  width: 70%;
+  padding: 0 1.5%;
+  overflow: auto;
+  background: white;
+}
+/* line 407, ../sass/screen.scss */
+#main article {
+  margin-top: 2em;
+}
+/* line 410, ../sass/screen.scss */
+#main article p {
+  line-height: 1.65em;
+  margin: 1em 0;
+}
+/* line 414, ../sass/screen.scss */
+#main article p:first-of-type {
+  font-size: 18px;
+}
+/* line 419, ../sass/screen.scss */
+#main article hgroup {
+  overflow: auto;
+  border-bottom: 1px solid #c68544;
+}
+/* line 424, ../sass/screen.scss */
+#main article hgroup h1 a {
+  color: #c68544;
+}
+@media screen and (max-width: 720px) {
+  /* line 400, ../sass/screen.scss */
+  #main {
+    float: none;
+    width: auto;
+  }
+}
+
+/* Sidebar styles: */
+/* line 438, ../sass/screen.scss */
+#sidebar {
+  float: right;
+  width: 23%;
+  padding: 0 1.5%;
+  overflow: auto;
+  background: white;
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  -ms-transition: all 0.25s ease;
+}
+@media screen and (max-width: 720px) {
+  /* line 438, ../sass/screen.scss */
+  #sidebar {
+    float: none;
+    width: auto;
+  }
+  /* line 452, ../sass/screen.scss */
+  #sidebar p {
+    display: none;
+  }
+}
+/* line 458, ../sass/screen.scss */
+#sidebar h1 {
+  padding: 0 0 0 10px;
+  line-height: 2;
+  background-color: #c68544;
+  color: white;
+}
+/* line 60, ../sass/screen.scss */
+#sidebar h1 a {
+  float: right;
+  position: relative;
+  text-decoration: none;
+  padding: 0 .5em;
+  border-left: 5px solid white;
+  background: #333333;
+  color: white;
+  -webkit-transition: padding 0.1s ease;
+  -moz-transition: padding 0.1s ease;
+  -o-transition: padding 0.1s ease;
+  -ms-transition: padding 0.1s ease;
+}
+/* line 70, ../sass/screen.scss */
+#sidebar h1 a:before, #sidebar h1 a:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 0;
+  height: 0;
+}
+/* line 78, ../sass/screen.scss */
+#sidebar h1 a:before {
+  left: -12px;
+  /* triangle: */
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-right: 9px solid white;
+  /* Pull-up */
+  margin-top: -9px;
+}
+/* line 88, ../sass/screen.scss */
+#sidebar h1 a:after {
+  /* Smaller and different position triangle */
+  left: -5px;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-right: 7px solid #333333;
+  margin-top: -7px;
+}
+/* line 97, ../sass/screen.scss */
+#sidebar h1 a:hover {
+  background: #4d4d4d;
+  padding: 0 .75em;
+}
+/* line 100, ../sass/screen.scss */
+#sidebar h1 a:hover:after {
+  border-right-color: #4d4d4d;
+}
+/* line 469, ../sass/screen.scss */
+#sidebar h2 {
+  font-family: 'Ubuntu Condensed', sans-serif;
+  font-style: normal;
+}
+/* line 474, ../sass/screen.scss */
+#sidebar h2 a {
+  text-decoration: none;
+}
+/* line 479, ../sass/screen.scss */
+#sidebar h3 {
+  font-size: 85%;
+  font-family: 'Ubuntu Condensed', sans-serif;
+}
+/* line 485, ../sass/screen.scss */
+#sidebar div {
+  margin-top: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #aaa;
+}
+/* line 490, ../sass/screen.scss */
+#sidebar div:last-child {
+  border-bottom: 0px none;
+}
+/* line 495, ../sass/screen.scss */
+#sidebar p {
+  font-size: 2em;
+  line-height: 1.65em;
+  margin: .25em 0;
+}
+/* line 500, ../sass/screen.scss */
+#sidebar .blogroll a {
+  display: block;
+}
+
+/* Footer styles: */
+/* line 505, ../sass/screen.scss */
+footer {
+  clear: both;
+  background: url(../../images/texture-dark.png) #333333;
+  border-top: 4px solid #c68544;
+}
+/* line 510, ../sass/screen.scss */
+footer .footer-content {
+  padding: 1em;
+  color: white;
+}
+/* line 516, ../sass/screen.scss */
+footer .footer-content nav {
+  display: inline-block;
+  float: left;
+  margin: 0 2em;
+}
+/* line 521, ../sass/screen.scss */
+footer .footer-content nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 529, ../sass/screen.scss */
+.featured {
+  overflow: auto;
+  color: #fffdf5;
+  background: url(../../images/texture-dark.png) #333333;
+  border-top: 4px solid #7d9d6c;
+  border-bottom: 4px solid #7d9d6c;
+}
+
+/* Home Content styles: */
+/* line 540, ../sass/screen.scss */
+.home-intro {
+  padding: 1em 1.5%;
+  /* Type; */
+  font-family: 'Ubuntu', sans-serif;
+}
+/* line 546, ../sass/screen.scss */
+.home-intro h1 {
+  margin: .25em 0;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0px black, 2px 2px 0px rgba(198, 133, 68, 0.5);
+}
+/* line 555, ../sass/screen.scss */
+.home-intro h2 {
+  margin: .25em 0;
+  color: #deb892;
+}
+
+/* line 562, ../sass/screen.scss */
+.home-featured {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 1em;
+  overflow: auto;
+  padding: 0;
+}
+/* line 570, ../sass/screen.scss */
+.home-featured > article {
+  float: left;
+  width: 30%;
+  padding: 5.5em 1.5% 0 1.5%;
+}
+/* line 575, ../sass/screen.scss */
+.home-featured > article h1 {
+  text-align: center;
+  margin: .5em 0;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 600px) {
+  /* line 570, ../sass/screen.scss */
+  .home-featured > article {
+    float: none;
+    width: auto;
+  }
+}
+/* line 587, ../sass/screen.scss */
+.home-featured > article hgroup h1 {
+  font-size: 1.5em;
+  text-transform: none;
+  text-shadow: none;
+  text-align: left;
+}
+/* line 593, ../sass/screen.scss */
+.home-featured > article hgroup h1 a {
+  color: #c68544;
+}
+/* line 598, ../sass/screen.scss */
+.home-featured > article hgroup h2 {
+  font-size: 1em;
+  font-style: none;
+}
+/* line 604, ../sass/screen.scss */
+.home-featured > article article {
+  margin-top: 1em;
+}
+/* line 609, ../sass/screen.scss */
+.home-featured .blog-preview {
+  background: url(../../images/preview-bg-blog.png) center top no-repeat;
+}
+/* line 613, ../sass/screen.scss */
+.home-featured .work-preview {
+  background: url(../../images/preview-bg-work.png) center top no-repeat;
+}
+/* line 617, ../sass/screen.scss */
+.home-featured .contact-preview {
+  background: url(../../images/preview-bg-contact.png) center top no-repeat;
+}
+/* line 621, ../sass/screen.scss */
+.home-featured .work-thumb {
+  margin: 1em 0;
+  text-align: center;
+}
+/* line 625, ../sass/screen.scss */
+.home-featured .work-thumb a {
+  opacity: 0.8;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+}
+/* line 629, ../sass/screen.scss */
+.home-featured .work-thumb a:hover {
+  opacity: 1;
+}
+
+/* Gallery: */
+/* line 638, ../sass/screen.scss */
+.gallery {
+  clear: both;
+  background: white;
+}
+/* line 642, ../sass/screen.scss */
+.gallery .gallery-item {
+  margin: 2em 0;
+  padding: 0 1em;
+}
+/* line 646, ../sass/screen.scss */
+.gallery .gallery-item .gallery-info {
+  float: right;
+  width: 45%;
+  padding: 0 2.4%;
+  border-left: 1px solid #aaa;
+}
+@media screen and (max-width: 680px) {
+  /* line 646, ../sass/screen.scss */
+  .gallery .gallery-item .gallery-info {
+    float: none;
+    width: auto;
+    border-left: none;
+  }
+}
+@media screen and (max-width: 680px) {
+  /* line 658, ../sass/screen.scss */
+  .gallery .gallery-item .gallery-info div {
+    float: none;
+    width: auto;
+  }
+}
+/* line 670, ../sass/screen.scss */
+.gallery .gallery-item .gallery-media {
+  float: left;
+  width: 45%;
+  padding: 0 2.4%;
+}
+@media screen and (max-width: 680px) {
+  /* line 670, ../sass/screen.scss */
+  .gallery .gallery-item .gallery-media {
+    float: none;
+    width: auto;
+  }
+}
+/* line 680, ../sass/screen.scss */
+.gallery .gallery-item .gallery-media a {
+  opacity: 0.7;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+}
+/* line 685, ../sass/screen.scss */
+.gallery .gallery-item .gallery-media a:hover {
+  opacity: 1;
+}
+/* line 687, ../sass/screen.scss */
+.gallery .gallery-item .gallery-media a:hover img {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+}
+
+/* Animations: ========================================================================================= */
+/* line 696, ../sass/screen.scss */
+.anim {
+  color: white;
+}
+/* line 701, ../sass/screen.scss */
+.anim .anim-section {
+  overflow: hidden;
+  padding: 1em 4em;
+}
+/* line 707, ../sass/screen.scss */
+.anim img {
+  max-width: 100%;
+}
+/* line 711, ../sass/screen.scss */
+.anim h1 {
+  margin: 0;
+  line-height: 1;
+  font-family: 'Ubuntu Condensed', sans-serif;
+  font-size: 46px;
+  text-transform: uppercase;
+}
+/* line 720, ../sass/screen.scss */
+.anim h1 span {
+  padding-right: .25em;
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+  color: #a6bc9a;
+  text-shadow: none;
+}
+/* line 728, ../sass/screen.scss */
+.anim h2 {
+  color: #ccc;
+  margin: .25em 0;
+  font-style: italic;
+}
+/* line 734, ../sass/screen.scss */
+.anim p {
+  color: #a6bc9a;
+  font-size: 18px;
+}
+
+/* Screen Images animation: */
+/* line 746, ../sass/screen.scss */
+.screens {
+  overflow: auto;
+  padding: 2em 1em;
+}
+/* line 750, ../sass/screen.scss */
+.screens .screens-imgs {
+  float: right;
+  position: relative;
+  overflow: hidden;
+  width: 60%;
+  height: 6em;
+}
+@media screen and (max-width: 600px) {
+  /* line 750, ../sass/screen.scss */
+  .screens .screens-imgs {
+    float: none;
+    width: 100%;
+  }
+}
+/* line 763, ../sass/screen.scss */
+.screens .screens-info {
+  float: left;
+  width: 40%;
+}
+@media screen and (max-width: 600px) {
+  /* line 763, ../sass/screen.scss */
+  .screens .screens-info {
+    float: none;
+    width: 100%;
+  }
+}
+/* line 773, ../sass/screen.scss */
+.screens .screen-desktop {
+  position: absolute;
+  -webkit-animation-name: SlideIn;
+  -webkit-animation-duration: 6s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-name: SlideIn;
+  -moz-animation-duration: 6s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: ease;
+}
+/* line 787, ../sass/screen.scss */
+.screens .screen-tablet {
+  position: absolute;
+  -webkit-animation-name: SlideIn;
+  -webkit-animation-duration: 6s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-name: SlideIn;
+  -moz-animation-duration: 6s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: ease;
+}
+/* line 800, ../sass/screen.scss */
+.screens .screen-mobile {
+  position: absolute;
+  -webkit-animation-name: SlideIn;
+  -webkit-animation-duration: 6s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-name: SlideIn;
+  -moz-animation-duration: 6s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: ease;
+}
+/* line 813, ../sass/screen.scss */
+.screens .screen-arrows {
+  position: absolute;
+  -webkit-animation-name: Point;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-direction: alternate;
+  -moz-animation-name: Point;
+  -moz-animation-duration: 1s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: ease;
+  -moz-animation-direction: alternate;
+}
+
+@-webkit-keyframes SlideIn {
+  /* line 831, ../sass/screen.scss */
+  0% {
+    opacity: 0;
+    left: -100%;
+    -webkit-transform: scaleX(2.5);
+  }
+
+  /* line 837, ../sass/screen.scss */
+  7% {
+    opacity: 1;
+    left: 0;
+    -webkit-transform: scaleX(1);
+  }
+
+  /* line 843, ../sass/screen.scss */
+  9% {
+    left: 10px;
+  }
+
+  /* line 847, ../sass/screen.scss */
+  13%, 95% {
+    left: 0;
+  }
+
+  /* line 851, ../sass/screen.scss */
+  97% {
+    left: -5%;
+    opacity: 1;
+    -webkit-transform: scaleX(1);
+  }
+
+  /* line 857, ../sass/screen.scss */
+  100% {
+    left: 100%;
+    opacity: 0;
+    -webkit-transform: scaleX(2);
+  }
+}
+
+@-moz-keyframes SlideIn {
+  /* line 865, ../sass/screen.scss */
+  0% {
+    opacity: 0;
+    left: -100%;
+    -moz-transform: scaleX(2.5);
+  }
+
+  /* line 871, ../sass/screen.scss */
+  7% {
+    opacity: 1;
+    left: 0;
+    -moz-transform: scaleX(1);
+  }
+
+  /* line 877, ../sass/screen.scss */
+  9% {
+    left: 10px;
+  }
+
+  /* line 881, ../sass/screen.scss */
+  13%, 95% {
+    left: 0;
+  }
+
+  /* line 885, ../sass/screen.scss */
+  97% {
+    left: -5%;
+    opacity: 1;
+    -moz-transform: scaleX(1);
+  }
+
+  /* line 891, ../sass/screen.scss */
+  100% {
+    left: 100%;
+    opacity: 0;
+    -moz-transform: scaleX(2);
+  }
+}
+
+@-webkit-keyframes Point {
+  /* line 899, ../sass/screen.scss */
+  0% {
+    opacity: 0.5;
+    -webkit-transform: scaleX(0.95);
+  }
+
+  /* line 904, ../sass/screen.scss */
+  100% {
+    opacity: 1;
+    -webkit-transform: scaleX(1);
+  }
+}
+
+@-moz-keyframes Point {
+  /* line 911, ../sass/screen.scss */
+  0% {
+    opacity: 0.5;
+    left: 5px;
+  }
+
+  /* line 916, ../sass/screen.scss */
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+/* Connect Dots animations: */
+/* line 925, ../sass/screen.scss */
+.connect .connect-info {
+  width: 60%;
+  float: right;
+}
+@media screen and (max-width: 600px) {
+  /* line 925, ../sass/screen.scss */
+  .connect .connect-info {
+    float: none;
+    width: 100%;
+  }
+}
+/* line 935, ../sass/screen.scss */
+.connect .connect-imgs {
+  float: left;
+  position: relative;
+  overflow: hidden;
+  width: 40%;
+  height: 7em;
+}
+@media screen and (max-width: 600px) {
+  /* line 935, ../sass/screen.scss */
+  .connect .connect-imgs {
+    float: none;
+    width: 100%;
+  }
+}
+/* line 948, ../sass/screen.scss */
+.connect .connect-dots {
+  position: absolute;
+  -webkit-animation-name: GrowIn;
+  -webkit-animation-duration: 7s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in;
+  -moz-animation-name: GrowIn;
+  -moz-animation-duration: 7s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: ease-in;
+}
+/* line 962, ../sass/screen.scss */
+.connect .connect-lines {
+  position: absolute;
+  -webkit-animation-name: ConnectFadeIn;
+  -webkit-animation-duration: 7s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-delay: 1.5s;
+  -webkit-animation-direction: alternate;
+  -moz-animation-name: ConnectFadeIn;
+  -moz-animation-duration: 7s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: ease-in;
+  -moz-animation-delay: 1.5s;
+  -moz-animation-direction: alternate;
+}
+/* line 980, ../sass/screen.scss */
+.connect .connect-bg {
+  position: absolute;
+  -webkit-animation-name: ConnectRotate;
+  -webkit-animation-duration: 20s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: ConnectRotate;
+  -moz-animation-duration: 20s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+}
+
+@-webkit-keyframes GrowIn {
+  /* line 996, ../sass/screen.scss */
+  0%,100% {
+    -webkit-transform: scale(0.1);
+    opacity: 0;
+  }
+
+  /* line 1001, ../sass/screen.scss */
+  15%,95% {
+    -webkit-transform: scale(1);
+    opacity: 1;
+    -webkit-animation-timing-function: ease-in;
+  }
+}
+
+@-moz-keyframes GrowIn {
+  /* line 1009, ../sass/screen.scss */
+  0%,100% {
+    -moz-transform: scale(0.1);
+    opacity: 0;
+  }
+
+  /* line 1014, ../sass/screen.scss */
+  15%,95% {
+    -moz-transform: scale(1);
+    opacity: 1;
+    -moz-animation-timing-function: ease-in;
+  }
+}
+
+@-webkit-keyframes ConnectFadeIn {
+  /* line 1022, ../sass/screen.scss */
+  0%,100% {
+    opacity: 0;
+  }
+
+  /* line 1026, ../sass/screen.scss */
+  10%,95% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes ConnectFadeIn {
+  /* line 1032, ../sass/screen.scss */
+  0%,100% {
+    opacity: 0;
+  }
+
+  /* line 1036, ../sass/screen.scss */
+  10%,95% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes ConnectRotate {
+  /* line 1042, ../sass/screen.scss */
+  0% {
+    -webkit-transform: rotate(360deg);
+  }
+
+  /* line 1046, ../sass/screen.scss */
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+@-moz-keyframes ConnectRotate {
+  /* line 1052, ../sass/screen.scss */
+  0% {
+    -moz-transform: rotate(360deg);
+  }
+
+  /* line 1056, ../sass/screen.scss */
+  100% {
+    -moz-transform: rotate(0deg);
+  }
+}
+
+/* Engage animations: */
+/* line 1062, ../sass/screen.scss */
+.engage {
+  clear: both;
+}
+/* line 1065, ../sass/screen.scss */
+.engage .engage-info {
+  float: left;
+  width: 40%;
+}
+@media screen and (max-width: 600px) {
+  /* line 1065, ../sass/screen.scss */
+  .engage .engage-info {
+    float: none;
+    width: 100%;
+  }
+}
+/* line 1075, ../sass/screen.scss */
+.engage .engage-imgs {
+  float: right;
+  width: 60%;
+  height: 6em;
+  position: relative;
+  overflow: hidden;
+}
+@media screen and (max-width: 600px) {
+  /* line 1075, ../sass/screen.scss */
+  .engage .engage-imgs {
+    float: none;
+    width: 100%;
+  }
+}
+/* line 1088, ../sass/screen.scss */
+.engage .engage-magnets {
+  position: absolute;
+  -webkit-animation-name: SpinIn;
+  -webkit-animation-duration: .8s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-direction: alternate;
+  -moz-animation-name: SpinIn;
+  -moz-animation-duration: .8s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: ease-out;
+  -moz-animation-direction: alternate;
+}
+/* line 1104, ../sass/screen.scss */
+.engage .engage-bolts {
+  position: absolute;
+  -webkit-animation-name: Spark;
+  -webkit-animation-duration: .7s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in;
+  -moz-animation-name: Spark;
+  -moz-animation-duration: .7s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: ease-in;
+}
+/* line 1118, ../sass/screen.scss */
+.engage .engage-people {
+  position: absolute;
+  -webkit-animation-name: GetPulled;
+  -webkit-animation-duration: .8s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-direction: alternate;
+  -moz-animation-name: GetPulled;
+  -moz-animation-duration: .8s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: ease-out;
+  -moz-animation-direction: alternate;
+}
+
+@-webkit-keyframes SpinIn {
+  /* line 1136, ../sass/screen.scss */
+  0% {
+    left: 10px;
+  }
+
+  /* line 1140, ../sass/screen.scss */
+  100% {
+    left: 0;
+  }
+}
+
+@-moz-keyframes SpinIn {
+  /* line 1146, ../sass/screen.scss */
+  0% {
+    left: 10px;
+  }
+
+  /* line 1150, ../sass/screen.scss */
+  100% {
+    left: 0;
+  }
+}
+
+@-webkit-keyframes GetPulled {
+  /* line 1156, ../sass/screen.scss */
+  0% {
+    opacity: 0.7;
+    left: 15px;
+    -webkit-transform: rotate(1deg);
+  }
+
+  /* line 1162, ../sass/screen.scss */
+  100% {
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+@-moz-keyframes GetPulled {
+  /* line 1170, ../sass/screen.scss */
+  0% {
+    opacity: 0.7;
+    left: 15px;
+    -moz-transform: rotate(1deg);
+  }
+
+  /* line 1176, ../sass/screen.scss */
+  100% {
+    opacity: 1;
+    left: 0;
+    -moz-transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes Spark {
+  /* line 1184, ../sass/screen.scss */
+  0% {
+    opacity: 0.7;
+    -webkit-transform: scale(1);
+  }
+
+  /* line 1189, ../sass/screen.scss */
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1.01);
+  }
+}
+
+@-moz-keyframes Spark {
+  /* line 1196, ../sass/screen.scss */
+  0% {
+    opacity: 0.7;
+    -moz-transform: scale(1);
+  }
+
+  /* line 1201, ../sass/screen.scss */
+  100% {
+    opacity: 1;
+    -moz-transform: scale(1.01);
+  }
+}
