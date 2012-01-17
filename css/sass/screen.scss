@@ -2,14 +2,16 @@
 @import "normalize";
 
 // Variables:
+
 	// colors: 
 	$bg-color:#fffdf5;
 	$header-color:white;
 	$main-bg:white;
 	$sidebar-bg:white;
 	$home-main-bg: #333;
-	$accent-color:#7D9D6C;
-	$link-color: #7D9D6C; // BF4C40(red)
+	$accent-color:#343838;
+	$accent-color2: #FA6900;
+	$link-color: #00B4CC; // BF4C40(red), 7D9D6C (green)
 
 
 	// widths:
@@ -24,8 +26,8 @@
 	$nav-height: 80px;
 
 	// fonts:
-	$fonts-headings: 'Ubuntu Condensed', serif;//'Ubuntu Condensed', sans-serif;
-	$fonts-body: 'Buenard', serif;//'Habibi', serif;
+	$fonts-headings: 'Lusitana', serif;//'Ubuntu Condensed', sans-serif;
+	$fonts-body: 'Lusitana', serif;//'Buenard', serif;
 
 // Functions:
 
@@ -172,6 +174,12 @@ hr {
 
 a:link, a:visited {
 	color: $link-color;
+	text-decoration: none;
+}
+
+a:active {
+	background: $link-color;
+	color: white;
 }
 
 a:hover {
@@ -195,16 +203,39 @@ h1 {
 
 h2 {
 	font-weight: 300; // uses Ubuntu Book because of weight=300
+	color: #999;
+}
+
+section {
+	overflow: auto;
 }
 
 article {
 	overflow: auto;
+
+	a {
+		border-bottom: 1px dashed #ccc;
+
+		&:hover {
+			border-bottom: 1px solid $link-color;
+		}
+	}
+
+	h1 a {border-bottom: 0 none;}
+
+	h2 {
+		font-family: 'Buenard', serif;
+	}
+
+	p {
+		text-indent: 1em;
+	}
 }
 
 #logo {
 
 	// Type:
-	font-family: 'Ubuntu', sans-serif;
+	font-family: 'Ubuntu Condensed', sans-serif;
 	//font-family: 'Sansita One', cursive;
 	font-size: 46px;
 	letter-spacing: -12px;
@@ -223,17 +254,34 @@ article {
 	}
 }
 
+/* Forms: */
+input, textarea {
+	display: block;
+	background: white;
+	padding: .25em;
+	border: 2px solid lighten($accent-color,40);
+	@include border-radius(8px,8px,8px,8px);
+
+	// Type:
+	font-family: $fonts-body;
+
+	&:hover, &:focus {
+		border-color: lighten($accent-color,20);
+		outline: 0;
+	}
+}
+
 /* Search: */
 .search {
 	@include border-radius(1em,1em,1em,1em);
 	border: 2px solid #ccc;
-	padding: .25em 1em;
+	padding: .25em .25em .25em 1em;
 	overflow: hidden;
 
 	.searchbox {
 		float: left;
 		border: 0 none;
-		width: 80%;
+		width: 85%;
 		margin: 0;
 		padding: 0;
 
@@ -243,10 +291,13 @@ article {
 	}
 
 	.searchbtn {
-		float:left;
-		width: 20%;
+		float:right;
+		width: 15%;
 		margin: 0;
 		padding: 0;
+		background: url(../../images/search.png) center center no-repeat;
+		border: 0 none;
+		text-indent: -9999px;
 	}
 }
 
@@ -298,8 +349,7 @@ header {
 				overflow: hidden;
 
 				// Type:
-				font-family: 'Ubuntu', sans-serif;
-				font-size: 20px;
+				font-family: 'Ubuntu Condensed', sans-serif;
 				line-height: $nav-height;
 				text-transform: uppercase;
 				text-decoration: none;
@@ -313,8 +363,9 @@ header {
 
 					// Type:
 					text-align: center;
+					font-size: 20px;
 					line-height: $nav-height;
-					text-shadow: 0px 1px 3px rgba(darken($accent-color,20),.25);
+					text-shadow: 0px -2px 0px rgba(white,.7);
 
 					@include transition(.2s,ease);
 				}
@@ -383,15 +434,35 @@ header {
 #main {
 	float: left;
 	width: $main-width;
-	padding: 0 ($gutter/2);
+	padding: 1em ($gutter/2);
 	overflow: auto;
 	background: $main-bg;
 
 	article {
 		margin-top: 2em;
+		border-bottom: 1px dotted #ccc;
+
+		&:last-child {border-bottom: none;}
 
 		p {
-			@include typo(2em);
+			line-height: 1.65em;
+			margin: 1em 0;
+
+			&:first-of-type {
+				font-size: 18px;
+			}
+		}
+
+		hgroup {
+			overflow: auto;
+			border-bottom: 1px solid lighten($accent-color,20);
+
+			h1 {
+				margin: .25em 0;
+				a {
+					color: $accent-color;
+				}
+			}
 		}
 	}
 
@@ -405,7 +476,7 @@ header {
 #sidebar {
 	float: right;
 	width: $sidebar-width - $gutter;
-	padding: 0 ($gutter/2);
+	padding: 1em ($gutter/2);
 	overflow: auto;
 	background: $sidebar-bg;
 	@include transition(.25s,ease);
@@ -415,9 +486,6 @@ header {
 	@media screen and (max-width: 720px) {
 		float: none;
 		width: auto;
-
-		// Type:
-		font-size: 80%;
 
 		p {
 			display: none;
@@ -431,26 +499,20 @@ header {
 		background-color: $accent-color;
 
 		// Type:
-		font-size: 110%;
 		color: white;
+		font-size: 1.25em;
 
 		@include arrow-left(#333,9px,white); //styles any anchor tags in this nest for the arrow
 	}
 
 	h2 {
 		// Type:
-		font-family: 'Ubuntu Condensed', sans-serif;
 		font-style: normal;
+		font-size: 1em;
 
 		a {
 			text-decoration: none;
 		}
-	}
-
-	h3 {
-		// Type:
-		font-size: 85%;
-		font-family: 'Ubuntu Condensed', sans-serif;
 	}
 
 	div {
@@ -476,7 +538,7 @@ header {
 footer {
 	clear: both;
 	background: url(../../images/texture-dark.png) $home-main-bg;
-	border-top: 4px solid $accent-color;
+	border-top: 4px solid $link-color;
 
 	.footer-content {
 		padding: 1em;
@@ -487,11 +549,25 @@ footer {
 		nav {
 			display: inline-block;
 			float: left;
-			margin: 0 2em;
+			padding: 0 2em;
+			border-left: 1px solid $accent-color;
+			&:first-child {border-left:0 none;}
 
 			ul {
 				margin: 0;
 				padding: 0;
+
+				li {
+
+					a {
+						display: block;
+						padding-top: .25em;
+						padding-bottom: .25em;
+
+						// Type:
+						font-family: 'Ubuntu Condensed', sans-serif;
+					}
+				}
 			}
 		}
 	}
@@ -503,8 +579,8 @@ footer {
 	
 	background: url(../../images/texture-dark.png) $home-main-bg;
 	
-	border-top: 4px solid $accent-color;
-	border-bottom: 4px solid $accent-color;
+	border-top: 4px solid $link-color;
+	border-bottom: 4px solid $link-color;
 }
 
 /* Home Content styles: */
@@ -512,7 +588,7 @@ footer {
 	padding: 1em ($home-gutter/2);
 
 	/* Type; */
-	font-family: 'Ubuntu', sans-serif;
+	font-family: 'Ubuntu Condensed', sans-serif;
 
 	h1 {
 		margin: .25em 0;
@@ -532,16 +608,20 @@ footer {
 
 .home-featured {
 	border: 1px solid rgba(white,.1);
-	margin-top: 1em;
 	// @include border-radius(1em,1em,1em,1em);
-	// background: rgba(black,.1);
+	// background: white;
 	overflow: auto;
-	padding: 0;
+	padding: 1em 0;
+
+	input, textarea {
+		width: 95%;
+		margin: 1em 0;
+	}
 
 	> article {
 		float: left;
 		width: 33% - $home-gutter;
-		padding: 5.5em ($home-gutter/2) 0 ($home-gutter/2);
+		padding: 6em ($home-gutter/2) 0 ($home-gutter/2);
 
 		h1 {
 			text-align: center;
@@ -549,7 +629,7 @@ footer {
 			text-transform: uppercase;
 		}
 
-		@media screen and (max-width: 600px) {
+		@media screen and (max-width: 780px) {
 			float: none;
 			width: auto;
 		}
@@ -560,6 +640,10 @@ footer {
 				text-transform: none;
 				text-shadow: none;
 				text-align: left;
+
+				a {
+					color: $accent-color;
+				}
 			}
 
 			h2 {
@@ -579,6 +663,7 @@ footer {
 
 	.work-preview {
 		background: url(../../images/preview-bg-work.png) center top no-repeat;
+		text-align: center;
 	}
 
 	.contact-preview {
@@ -587,15 +672,13 @@ footer {
 
 	.work-thumb {
 		margin: 1em 0;
-		text-align: center;
-		
-		a {
-			opacity: 0.8;
-			@include transition(.2s,ease);
+		opacity: 0.8;
 
-			&:hover {
-				opacity: 1;
-			}
+		@include transition(.2s,ease);
+		border-bottom: 0 none;
+
+		&:hover {
+			opacity: 1;
 		}
 	}
 
@@ -604,9 +687,11 @@ footer {
 /* Gallery: */
 .gallery {
 	clear:both;
+	background: white;
 	
 	.gallery-item {
 		margin: 2em 0;
+		padding: 0 1em;
 		
 		.gallery-info {
 			float: right;
@@ -697,7 +782,7 @@ footer {
 	}
 
 	p {
-		color: lighten($accent-color,15);
+		color: lighten($accent-color,35);
 		font-size: 18px;
 	}
 }
