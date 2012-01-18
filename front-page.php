@@ -95,8 +95,6 @@ Template Name: Homepage
                 
             <h1><a href="/">blog</a></h1>
             
-            <hr>
-            
             <?php query_posts('posts_per_page=3'); ?>
             
             <?php if ( ! have_posts() ) : ?>  
@@ -111,37 +109,30 @@ Template Name: Homepage
                 	<hgroup>
                     
                     	<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-                        <h2><?php the_time(get_option('date_format')); ?> &middot; <?php the_author(); ?> &middot; <?php the_category(', '); ?></h2>
+                        <h2>
+                            <?php the_time(get_option('date_format')); ?> &middot; By: <?php the_author(); ?> &middot; <?php the_category(', '); ?>
+                            <span class="comment-count"><?php comments_popup_link('Comment', '1 Comment', '% Comments'); ?></span>
+                        </h2>
                         
                     </hgroup>
                     
-                    <span class="comment-count"><?php comments_popup_link('Comment', '1 Comment', '% Comments'); ?></span>
-                    
+                    <p>
 					<?php 
 						$excerpt = get_the_excerpt();
-						echo string_limit_words($excerpt,15);
+						echo string_limit_words($excerpt,10);
 						echo ' <a class="moretag" href="'. get_permalink($post->ID) . '">Continue Reading...</a>'
 					?>
+                    </p>
                         
                 </article>
             
             <?php endwhile; ?>
-            
-            <?php //check if there are more than 1 posts resulting from the above loop ?>
-            <?php if ( $wp_query->max_num_pages > 1 ) : ?>  
-                    <div id="older-posts"><?php next_posts_link('Older Posts'); ?></div>  
-                    <div id="newer-posts"><?php previous_posts_link('Newer Posts'); ?></div>  
-            <?php else: ?>  
-                    <div id="only-page">No newer/older posts</div>  
-            <?php endif; ?>
         
         </article>
         
         <article class="work-preview">
             
             <h1><a href="/">my work</a></h1>
-            
-            <hr>
             
             <div class="work-thumb">
             	<a href="/"><img src="images/ss-hdsupply-electrical.png" /></a>
@@ -157,9 +148,15 @@ Template Name: Homepage
             
             <h1><a href="/">contact me</a></h1>
             
-            <hr>
-            
-            <a href="/">E-mail Me</a>
+            <form name="contact">
+
+                <input type="text" name="name" placeholder="Your Name" />
+                <input type="text" name="email" placeholder="Your E-mail" />
+                <textarea name="msg" placeholder="A message to me..."></textarea>
+                <input type="submit" name="submit" value="Send">
+
+            </form>
+
             <a href="/" class="twitter">Follow Me</a>
             <a href="/" class="linkedin">LinkedIn</a>
         

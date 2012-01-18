@@ -7,7 +7,7 @@
     
     <!-- fonts: -->
     <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Buenard' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lusitana:400,700' rel='stylesheet' type='text/css'>
     
     <!-- FlexSlider pieces -->
 	<link href="<?php bloginfo('stylesheet_directory'); ?>/css/flexslider.css" rel="stylesheet" type="text/css" media="screen" />

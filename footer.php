@@ -44,12 +44,18 @@
 				animation: "slide",
 				controlsContainer: ".flex-container",
 				animationDuration: 600,
+                before: function(slider) {
+                    //animations:
+                    $(".screens-imgs").fitText(1, {maxFontSize: '52px'});
+                    $(".connect-imgs").fitText(1, {maxFontSize: '46px'});
+                    $(".engage-imgs").fitText(1, {maxFontSize: '46px'});
+                }
 			});
         });
     </script>
  
 <!-- Fittext setup: -->  
-	<script src="<?php bloginfo('template_url'); ?>/scripts/jquery.fittext.js"></script>
+	<script src="<?php bloginfo('template_url'); ?>/scripts/jquery.fittext.js"></script>      
 	<script>
 		$(window).load(function() {
 			
@@ -57,11 +63,10 @@
 			$(".screens-imgs").fitText(1, {maxFontSize: '52px'});
 			$(".connect-imgs").fitText(1, {maxFontSize: '46px'});
 			$(".engage-imgs").fitText(1, {maxFontSize: '46px'});
-			$(".anim h4").fitText(0.5, {maxFontSize: '52px'});
-			$(".anim h5").fitText(1.5, {minFontSize: '14px', maxFontSize: '24px'});
+			$(".anim h1").fitText(0.5, {maxFontSize: '52px'});
+			$(".anim h2").fitText(1.5, {minFontSize: '14px', maxFontSize: '24px'});
 			$(".anim p").fitText(1, {minFontSize: '12px', maxFontSize: '18px'});				
 			
-			$("#main hgroup > h1").fitText(1.0, {maxFontSize: '48px'});
 			$("#main article hgroup h1").fitText(1.2, {maxFontSize: '36px'});
 			$("#main article hgroup h2").fitText(2, {maxFontSize: '20px'});
 			$("#sidebar article p").fitText(1.25, {maxFontSize: '16px'});
