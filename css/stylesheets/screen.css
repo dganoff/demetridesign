@@ -768,7 +768,7 @@ header nav.main li:nth-child(4) a div {
 }
 /* line 441, ../sass/screen.scss */
 #main article {
-  margin-top: 2em;
+  margin-bottom: 2em;
   border-bottom: 1px dotted #ccc;
 }
 /* line 445, ../sass/screen.scss */
