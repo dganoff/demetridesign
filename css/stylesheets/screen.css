@@ -692,7 +692,7 @@ header nav.main li a h5 {
   text-align: center;
   font-size: 20px;
   line-height: 80px;
-  text-shadow: 0px -2px 0px rgba(255, 255, 255, 0.7);
+  text-shadow: 0px 2px 0px rgba(255, 255, 255, 0.7);
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
@@ -990,7 +990,7 @@ footer .footer-content nav ul li a {
 .home-featured > article {
   float: left;
   width: 30%;
-  padding: 6em 1.5% 0 1.5%;
+  padding: 5em 1.5% 0 1.5%;
 }
 /* line 621, ../sass/screen.scss */
 .home-featured > article h1 {

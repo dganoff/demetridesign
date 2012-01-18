@@ -360,7 +360,7 @@ header {
 					text-align: center;
 					font-size: 20px;
 					line-height: $nav-height;
-					text-shadow: 0px -2px 0px rgba(white,.7);
+					text-shadow: 0px 2px 0px rgba(white,.7);
 
 					@include transition(.2s,ease);
 				}
@@ -616,7 +616,7 @@ footer {
 	> article {
 		float: left;
 		width: 33% - $home-gutter;
-		padding: 6em ($home-gutter/2) 0 ($home-gutter/2);
+		padding: 5em ($home-gutter/2) 0 ($home-gutter/2);
 
 		h1 {
 			text-align: center;
