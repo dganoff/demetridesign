@@ -226,7 +226,7 @@ h1 {
 }
 
 h2 {
-	font-weight: 300; // uses Ubuntu Book because of weight=300
+	// font-family: 'Ubuntu Condensed', Sans-Serif;
 	color: #999;
 }
 
@@ -247,9 +247,6 @@ article {
 
 	h1 a {border-bottom: 0 none;}
 
-	h2 {
-		font-family: 'Buenard', serif;
-	}
 
 	p {
 		text-indent: 1em;
@@ -257,12 +254,17 @@ article {
 }
 
 .logo {
+	position: relative;
 	display:block;
 	float: left;
 	width: 284px;
 	height: 80px;
 	margin-left: .5em;
 	background: url(../../images/logo.png) left center no-repeat;
+
+	&:active {
+		top: 2px;
+	}
 
 	@media screen and (max-width: 650px) {
 		float: none;
@@ -322,10 +324,10 @@ input, textarea {
 
 	.searchbtn {
 		float:right;
-		width: 15%;
+		width: 20px;
 		margin: 0;
 		padding: 0;
-		background: url(../../images/search.png) center center no-repeat;
+		background: url(../../images/search.png) center left no-repeat;
 		border: 0 none;
 		text-indent: -9999px;
 	}
@@ -639,6 +641,12 @@ footer {
 	
 	border-top: 4px solid $link-color;
 	border-bottom: 4px solid $link-color;
+
+	@media screen and (max-width: 720px) {
+		.page-wrap {
+			padding: 0 1em;
+		}
+	}
 }
 
 /* Home Content styles: */

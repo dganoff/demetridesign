@@ -3,14 +3,17 @@
 
 <head> 
     <title><?php bloginfo('name'); ?> <?php wp_title(); ?></title>
+    
+    <!-- FlexSlider pieces -->
+    <link href="<?php bloginfo('stylesheet_directory'); ?>/css/flexslider.css" rel="stylesheet" type="text/css" media="screen" />
+
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/stylesheets/screen.css" type="text/css">
     
     <!-- fonts: -->
     <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lusitana:400,700' rel='stylesheet' type='text/css'>
     
-    <!-- FlexSlider pieces -->
-	<link href="<?php bloginfo('stylesheet_directory'); ?>/css/flexslider.css" rel="stylesheet" type="text/css" media="screen" />
+    
     
     <?php wp_head(); ?>
 </head>
