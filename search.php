@@ -9,15 +9,19 @@
 
 get_header(); ?>
 
+<section class="featured">
+
+	<div class="page-wrap">
+
+		<h1><?php printf( __( 'You Searched for: %s' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+
+	</div><!-- .page-wrap -->
+
+</section><!-- .featured -->
 	<div class="page-wrap">
 		<section id="main">
 
 			<?php if ( have_posts() ) : ?>
-
-				<header class="page-header">
-					<h1 class="page-title"><?php printf( __( 'Search Results for: %s' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-				</header>
-
 
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
@@ -58,7 +62,8 @@ get_header(); ?>
 
 			<?php else : ?>
 
-				<p>nothing found</p>
+				<p>These aren't the droids you're looking for...</p>
+				<p>Again, you must search.</p>
 
 			<?php endif; ?>
 

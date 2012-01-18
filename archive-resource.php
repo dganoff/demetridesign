@@ -6,51 +6,93 @@ Template Name: Resources
 
 <?php get_header(); ?>
 
-<div class="page-wrap">
+<section class="featured">
 
-	<section class="gallery">
-
-		<?php
-		$args = array( 'post_type' => 'resource', 'posts_per_page' => 10 );
-		$loop = new WP_Query( $args );
-		?>
+	<div class="page-wrap">
 		
-		<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+		<h1><?php the_title(); ?></h1>
 
-			<?php // Let's get the data we need	
-				$objective = get_post_meta( $post->ID, 'Objective', true );
-				$involvement = get_post_meta( $post->ID, 'Involvement', true );
-				$address = get_post_meta( $post->ID, 'address', true );
+	<div><!-- .page-wrap -->
+
+</section><!-- .featured -->
+
+<div class="page-wrap">
+	<div class="flex-container">
+        <div class="flexslider">
+            <ul class="slides">
+
+				<?php
+				$args = array( 'post_type' => 'resource', 'posts_per_page' => 10 );
+				$loop = new WP_Query( $args );
+				?>
 				
-				$resource_presenters = strip_tags( get_the_term_list( $wp_query->post->ID, 'presenters', '', ', ', '' ) );
-				//$resource_topics = get_the_term_list( $post->ID, 'topics', '', ', ', '' );
-				$topics = strip_tags( get_the_term_list( $wp_query->post->ID, 'topics', '', ', ', '' ) );
-				
-				$resource_image = new WP_Query( // Start a new query for our videos
-				array(
-					'post_parent' => $post->ID, // Get data from the current post
-					'post_type' => 'attachment', // Only bring back attachments
-					'post_mime_type' => 'image', // Only bring back attachments that are videos
-					'posts_per_page' => '1', // Show us the first result
-					'post_status' => 'inherit', // Attachments require "inherit" or "all"
-					)
-				);
-			?>
-			
-			<a href="<?php the_permalink(); ?>">
+				<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
-				<?php while ( $resource_image->have_posts() ) : $resource_image->the_post(); ?>
+					<?php // Let's get the data we need	
+						$objective = get_post_meta( $post->ID, 'Objective', true );
+						$involvement = get_post_meta( $post->ID, 'Involvement', true );
+						$address = get_post_meta( $post->ID, 'address', true );
+						
+						$resource_presenters = strip_tags( get_the_term_list( $post->ID, 'presenters', '', ', ', '' ) );
+						$topics = strip_tags( get_the_term_list( $post->ID, 'topics', '', ', ', '' ) );
+						
+						$resource_image = new WP_Query( // Start a new query for our videos
+						array(
+							'post_parent' => $post->ID, // Get data from the current post
+							'post_type' => 'attachment', // Only bring back attachments
+							'post_mime_type' => 'image', // Only bring back attachments that are videos
+							'posts_per_page' => '1', // Show us the first result
+							'post_status' => 'inherit', // Attachments require "inherit" or "all"
+							)
+						);
+					?>
 
-	            	<img src="<?php echo $post->guid; ?>">
-	            
+                    <li>
+
+                    	<div class="gallery-item">                        	
+            
+			                <h1><a href="<?php echo $address ?>" target="_blank"><?php the_title(); ?></a></h1>
+			                <h2>Client: <?php echo $resource_presenters ?></h2>
+
+							<section class="gallery-media">
+                	
+			                    <?php while ( $resource_image->have_posts() ) : $resource_image->the_post(); ?>
+			                    
+			                    <a href="<?php $address ?>" target="_blank">
+			                    	<img src="<?php echo $post->guid; ?>">
+			                    </a>
+			                    
+								<?php endwhile; ?>
+			                
+			                </section>
+
+							<section class="gallery-info">
+            
+								<h3>Objective</h3>
+								<p><?php echo $objective ?></p>
+			                    
+			                    <h3>Technologies</h3>
+			                    <code><?php echo $topics; ?></code>
+			                    
+			                    <h3>My Involvement</h3>
+								<p><?php echo $involvement ?></p>
+			                
+			                </section>
+
+			                
+
+						</div><!-- .gallery-item -->
+
+                    </li>
+
 				<?php endwhile; ?>
 
-			</a>
+            </ul>
+        </div><!-- flexslider -->
+    </div><!-- flex-container -->
 
-		<?php endwhile; ?>
-        
-    </section><!-- .gallery -->
-    
 </div><!-- .page-wrap -->
+
+
 
 <?php get_footer(); ?>

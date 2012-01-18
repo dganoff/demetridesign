@@ -18,6 +18,9 @@
 <body>
 
 <header class="page-wrap">
+    
+    <a href="<?php echo home_url(); ?>" class="logo"></a>
+
     <nav class="main">
     	
         <?php wp_nav_menu(array( 

@@ -3,6 +3,11 @@
 <div class="page-wrap">
 
 	<section id="main">
+
+        <nav class="breadcrumbs">
+            <a href"/">[Add]</a> &rsaquo;
+            <a href"/">[Bread Crumbs!]</a>
+        </nav>
     
     	<?php if ( ! have_posts() ) : ?>  
                 <h2>Not Found</h2>
@@ -15,13 +20,19 @@
             
             	<hgroup>
                 	
-                    <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-                    <h2><?php the_time(get_option('date_format')); ?> &middot; <?php the_author(); ?> &middot; <?php the_category(', '); ?></h2>
+                    <h1>
+                        <?php the_title(); ?>
+                        <?php comments_popup_link('', '1', '%','comments'); ?>
+                    </h1>
+                    <h2>
+                        <?php the_time(get_option('date_format')); ?> &middot; 
+                        By: <?php the_author(); ?> &middot; 
+                        <img src="<?php bloginfo('template_url'); ?>/images/category.png"> <?php the_category(', '); ?>
+
+                    </h2>
                     
                 </hgroup>
-                
-                <span class="comment-count"><?php comments_popup_link('Comment', '1 Comment', '% Comments'); ?></span>
-                
+                                
                 <?php edit_post_link('Edit', '<span class="edit">  ' , '</span>'); ?>
                             
                 <?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>  

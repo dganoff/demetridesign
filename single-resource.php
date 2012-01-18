@@ -6,7 +6,6 @@
 	$address = get_post_meta( $post->ID, 'address', true );
 	
 	$resource_presenters = strip_tags( get_the_term_list( $wp_query->post->ID, 'presenters', '', ', ', '' ) );
-	//$resource_topics = get_the_term_list( $post->ID, 'topics', '', ', ', '' );
 	$topics = strip_tags( get_the_term_list( $wp_query->post->ID, 'topics', '', ', ', '' ) );
 	
 	$resource_image = new WP_Query( // Start a new query for our videos
@@ -34,13 +33,13 @@
                 <section class="gallery-info">
                 
 					<h3>Objective</h3>
-					<?php echo $objective ?>
+					<p><?php echo $objective ?></p>
                     
                     <h3>Technologies</h3>
-                    <?php echo $topics; ?>
+                    <p><?php echo $topics; ?></p>
                     
                     <h3>My Involvement</h3>
-					<?php echo $involvement ?>
+					<p><?php echo $involvement ?></p>
                 
                 </section>
                 

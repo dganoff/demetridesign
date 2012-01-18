@@ -144,6 +144,35 @@
 	margin: .25em 0;
 }
 
+@mixin sidebar-module {
+
+	margin-top: 1em;
+	border-bottom: 1px dotted #ccc;
+
+	&:first-child {
+		margin-top: 0px;
+		border-bottom: 0px none;
+	}
+
+	&:last-child {
+		border-bottom: 0px none;
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+
+		li {
+			a {
+				display: block;
+				line-height: 1em;
+			}
+
+			margin-bottom: .5em;
+		}
+	}
+}
+
 /* General styles: */
 @include selection(#FCF2C5,#BF4C40);
 
@@ -227,21 +256,27 @@ article {
 	}
 }
 
-#logo {
+.logo {
+	display:block;
+	float: left;
+	width: 284px;
+	height: 80px;
+	margin-left: .5em;
+	background: url(../../images/logo.png) left center no-repeat;
 
-	// Type:
-	font-family: 'Ubuntu Condensed', sans-serif;
-	//font-family: 'Sansita One', cursive;
-	font-size: 46px;
-	letter-spacing: -12px;
-	text-indent: -12px; //should be the same value as the letter-spacing so the text is still centered
-	text-decoration: none;
+	@media screen and (max-width: 650px) {
+		float: none;
+		margin: 0 auto;
+		width: 166px;
+		height: 35px;
+		background: url(../../images/logo-sm.png) left center no-repeat;
+	}
 }
 
 .page-wrap {
 	width: $wrap-width;
 	max-width: 1280px;
-	overflow: auto;
+	overflow: hidden;
 	margin: 0 auto;
 
 	@media screen and (max-width: 720px) {
@@ -328,6 +363,10 @@ header {
 			height: $nav-height;
 			overflow: hidden;
 			float: right;
+
+			@media screen and (max-width: 650px) {
+				float: none;
+			}
 		}
 
 		li {
@@ -360,7 +399,11 @@ header {
 					text-align: center;
 					font-size: 20px;
 					line-height: $nav-height;
-					text-shadow: 0px 2px 0px rgba(white,.7);
+					text-shadow: 0px -1px 0px rgba($accent-color,.2);
+
+					@media screen and (max-width: 650px) {
+						font-size: 16px;
+					}
 
 					@include transition(.2s,ease);
 				}
@@ -432,6 +475,7 @@ header {
 	padding: 1em ($gutter/2);
 	overflow: auto;
 	background: $main-bg;
+	@include border-radius(5px,5px,5px,5px);
 
 	article {
 		margin-bottom: 2em;
@@ -450,12 +494,35 @@ header {
 
 		hgroup {
 			overflow: auto;
-			border-bottom: 1px solid lighten($accent-color,20);
+			border-bottom: 1px solid lighten($accent-color,40);
 
 			h1 {
 				margin: .25em 0;
 				a {
 					color: $accent-color;
+				}
+
+				a.comments {
+					background: url(../../images/comment.png) center center no-repeat;
+					position: absolute;
+					width: 30px;
+					height: 30px;
+					padding: 3px 0 0;
+					margin-left: 15px;
+					overflow: hidden;
+					border-bottom: none;
+					opacity: .8;
+
+					&:hover {
+						border-bottom: none;
+						opacity: 1;
+					}
+
+					// Type:
+					font-size: 16px;
+					text-align: center;
+					color: white;
+					line-height: 25px;
 				}
 			}
 		}
@@ -475,6 +542,7 @@ header {
 	overflow: auto;
 	background: $sidebar-bg;
 	@include transition(.25s,ease);
+	@include border-radius(5px,5px,5px,5px);
 
 	// Type:
 
@@ -492,6 +560,7 @@ header {
 		padding: 0 0 0 10px;
 		line-height: 2;
 		background-color: $accent-color;
+		@include border-radius(5px,5px,5px,5px);
 
 		// Type:
 		color: white;
@@ -510,14 +579,8 @@ header {
 		}
 	}
 
-	div {
-		margin-top: 1em;
-		padding-bottom: 1em;
-		border-bottom: 1px solid #aaa;
-
-		&:last-child {
-			border-bottom: 0px none;
-		}
+	.sidebar-module {
+		@include sidebar-module;
 	}
 
 	p {
@@ -680,57 +743,52 @@ footer {
 }
 
 /* Gallery: */
-.gallery {
-	clear:both;
-	background: white;
+
+.gallery-item {
+	padding: 1em 45px;
 	
-	.gallery-item {
-		margin: 2em 0;
-		padding: 0 1em;
-		
-		.gallery-info {
-			float: right;
-			width: 45%;
-			padding: 0 2.4%;
-			border-left: 1px solid #aaa;
+	.gallery-info {
+		float: right;
+		width: 45%;
+		padding: 0 2.4%;
+		border-left: 1px solid #aaa;
 
-			@media screen and (max-width: 680px) {
-				float: none;
-				width: auto;
-				border-left: none;
-			}
-
-			div {
-				// float: left;
-				// width: 31%;
-				// padding: 0 1%;
-
-				@media screen and (max-width: 680px) {
-					float: none;
-					width: auto;
-				}
-			}
+		@media screen and (max-width: 680px) {
+			float: none;
+			width: auto;
+			border-left: none;
 		}
 
-		.gallery-media {
-			float: left;
-			width: 45%;
-			padding: 0 2.4%;
+		div {
+			// float: left;
+			// width: 31%;
+			// padding: 0 1%;
 
 			@media screen and (max-width: 680px) {
 				float: none;
 				width: auto;
 			}
+		}
+	}
 
-			a {
-				opacity: 0.7;
+	.gallery-media {
+		float: left;
+		width: 45%;
+		padding: 0 2.4%;
 
-				@include transition(.5s,ease);
+		@media screen and (max-width: 680px) {
+			float: none;
+			width: auto;
+		}
 
-				&:hover {
-					opacity: 1;
-					img {box-shadow: 0px 0px 5px rgba(black,.4);}
-				}
+		a {
+			opacity: 0.7;
+
+			@include transition(.5s,ease);
+
+			&:hover {
+				opacity: 1;
+				img {box-shadow: 0px 0px 5px rgba(black,.4);}
 			}
 		}
 	}

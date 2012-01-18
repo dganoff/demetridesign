@@ -111,7 +111,6 @@ Template Name: Homepage
                     	<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
                         <h2>
                             <?php the_time(get_option('date_format')); ?> &middot; By: <?php the_author(); ?> &middot; <?php the_category(', '); ?>
-                            <span class="comment-count"><?php comments_popup_link('Comment', '1 Comment', '% Comments'); ?></span>
                         </h2>
                         
                     </hgroup>
