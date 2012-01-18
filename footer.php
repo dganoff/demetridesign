@@ -1,33 +1,8 @@
 <footer>
 	<div class="page-wrap footer-content">
         
-        <nav>
-        
-        <h1>Social</h1>
-            
-            <ul>
-                
-                <li><a href="/" class="twitter">Follow Me</a></li>
-                <li><a href="/" class="linkedin">LinkedIn</a></li>
-    
-            </ul>
-    
-        </nav>
-            
-        <nav>
-        
-        <h1>Do Stuff</h1>            
-            
-            <ul>
-                
-                <li><a href="/">home</a></li>
-                <li><a href="/">blog</a></li>
-                <li><a href="/">my work</a></li>
-                <li><a href="/">contact</a></li>
-    
-            </ul>
-    
-        </nav>
+        <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("footer") ) : ?>  
+        <?php endif; ?>
 
     </div><!-- .footer-content -->
 </footer>

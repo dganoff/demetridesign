@@ -39,10 +39,19 @@ if ( function_exists( 'wp_nav_menu' ) ){
 if ( function_exists('register_sidebar') )  
     register_sidebar(array(  
     'name' => 'sidebar',  
-    'before_widget' => '<div class="sidebar-box">',  
+    'before_widget' => '<div class="sidebar-module">',  
     'after_widget' => '</div>',  
-    'before_title' => '<span class="sidebar-title">',  
-    'after_title' => '</span><div class="dots"></div>',  
+    'before_title' => '<h1>',  
+    'after_title' => '</h1>'
+));
+
+if ( function_exists('register_sidebar') )  
+    register_sidebar(array(  
+    'name' => 'footer',  
+    'before_widget' => '<nav>',  
+    'after_widget' => '</nav>',  
+    'before_title' => '<h1>',  
+    'after_title' => '</h1>'
 ));
 // !end register sidebar formatting
 

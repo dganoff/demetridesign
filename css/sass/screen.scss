@@ -177,11 +177,6 @@ a:link, a:visited {
 	text-decoration: none;
 }
 
-a:active {
-	background: $link-color;
-	color: white;
-}
-
 a:hover {
 	color: darken($link-color,10);
 }

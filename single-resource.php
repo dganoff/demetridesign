@@ -9,7 +9,7 @@
 	//$resource_topics = get_the_term_list( $post->ID, 'topics', '', ', ', '' );
 	$topics = strip_tags( get_the_term_list( $wp_query->post->ID, 'topics', '', ', ', '' ) );
 	
-	$resource_video = new WP_Query( // Start a new query for our videos
+	$resource_image = new WP_Query( // Start a new query for our videos
 	array(
 		'post_parent' => $post->ID, // Get data from the current post
 		'post_type' => 'attachment', // Only bring back attachments
@@ -46,7 +46,7 @@
                 
                 <section class="gallery-media">
                 	
-                    <?php while ( $resource_video->have_posts() ) : $resource_video->the_post(); ?>
+                    <?php while ( $resource_image->have_posts() ) : $resource_image->the_post(); ?>
                     
                     <a href="/" target="_blank">
                     	<img src="<?php echo $post->guid; ?>">
