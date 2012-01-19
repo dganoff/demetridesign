@@ -55,6 +55,21 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
 .flex-direction-nav li .prev {left: 0;}
 .flex-direction-nav li .disabled {opacity: .3; filter:alpha(opacity=30); cursor: default;}
 
+@media screen and (max-width: 600px){
+	.flex-direction-nav li a {
+		width: 11px;
+		height: 28px;
+		background: url(../images/slide-arrows-mobile.png) no-repeat 0 0;
+	}
+
+	.flex-direction-nav li .next {
+		background-position: 0 -28px;
+		right: -5px;
+	}
+
+	.flex-direction-nav li .prev {left: -5px;}
+}
+
 /* Control Nav */
 .flex-control-nav {width: 100%; text-align: center;}
 .flex-control-nav li {margin: 0 0 0 5px; display: inline-block; zoom: 1; *display: inline;}

@@ -5,8 +5,9 @@
 	<section id="main">
         
         <nav class="breadcrumbs">
-            <a href"/">[Add]</a> &rsaquo;
-            <a href"/">[Bread Crumbs!]</a>
+            
+            <?php include 'breadcrumbs.php'; ?>
+
         </nav>
     
 		<?php if ( ! have_posts() ) : ?>  

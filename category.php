@@ -21,6 +21,12 @@
 <div class="page-wrap">
 
 	<section id="main">
+        
+        <nav class="breadcrumbs">
+            
+            <?php include 'breadcrumbs.php'; ?>
+
+        </nav>
     
     	<?php if ( ! have_posts() ) : ?>  
                 <h2>Not Found</h2>

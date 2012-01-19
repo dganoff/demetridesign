@@ -176,18 +176,13 @@ Template Name: Homepage
         <article class="contact-preview">
             
             <h1><a href="/">contact me</a></h1>
-            
-            <form name="contact">
-
-                <input type="text" name="name" placeholder="Your Name" />
-                <input type="text" name="email" placeholder="Your E-mail" />
-                <textarea name="msg" placeholder="A message to me..."></textarea>
-                <input type="submit" name="submit" value="Send">
-
-            </form>
 
             <a href="/" class="twitter">Follow Me</a>
             <a href="/" class="linkedin">LinkedIn</a>
+
+            <h3>Send me a message:</h3>
+
+            <?php echo do_shortcode( '[contact-form-7 id="116" title="Contact"]' ); ?>
         
         </article>
     
