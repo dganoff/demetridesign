@@ -40,14 +40,14 @@
                             
                 <section class="gallery-info">
                 
+					<h3>My Involvement</h3>
+					<p><?php echo $involvement ?></p>
+
 					<h3>Objective</h3>
 					<p><?php echo $objective ?></p>
                     
                     <h3>Technologies</h3>
-                    <p><?php echo $technologies; ?></p>
-                    
-                    <h3>My Involvement</h3>
-					<p><?php echo $involvement ?></p>
+                    <code><?php echo $technologies; ?></code>
                 
                 </section>
                 

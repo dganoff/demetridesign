@@ -48,9 +48,9 @@ Template Name: Homepage
                                         <div class="connect-info">
                                             <h1><span>2</span> Social</h1><hr>
                                             <h2>Lets be friends!</h2>
-                                            <p>Social networks open up endless possibilities for growth on your website.</p>
-                                            <a href="/" class="twitter">Follow Me</a>
-                                            <a href="/" class="linkedin">LinkedIn</a>
+                                            <p>Get connected and get your name out there with social networks.</p>
+                                            <a href="https://twitter.com/#!/DGanoff" class="twitter">Follow Me</a>
+                                            <a href="http://www.linkedin.com/profile/view?id=106912868&locale=en_US&trk=tab_pro" class="linkedin">LinkedIn</a>
                                         </div>
                                         
                                     </div><!-- .connect -->

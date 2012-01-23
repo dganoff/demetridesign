@@ -681,6 +681,7 @@ footer {
 
 		// Type:
 		color: white;
+		font-family: 'Ubuntu Condensed', sans-serif;
 
 		nav {
 			display: inline-block;
@@ -705,6 +706,11 @@ footer {
 					}
 				}
 			}
+		}
+
+		.disclaimer {
+			clear: both;
+			margin: .5em 0;
 		}
 	}
 }

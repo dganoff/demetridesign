@@ -77,14 +77,14 @@ Template Name: Works
 
 								<section class="gallery-info">
 	            
+				                    <h3>My Involvement</h3>
+									<p><?php echo $involvement ?></p>
+
 									<h3>Objective</h3>
 									<p><?php echo $objective ?></p>
 				                    
 				                    <h3>Technologies</h3>
 				                    <code><?php echo $technologies; ?></code>
-				                    
-				                    <h3>My Involvement</h3>
-									<p><?php echo $involvement ?></p>
 				                
 				                </section>
 

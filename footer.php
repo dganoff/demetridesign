@@ -4,6 +4,12 @@
         <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("footer") ) : ?>  
         <?php endif; ?>
 
+        <div class="disclaimer">
+	        This site was created with CSS3 and HTML5 on the WordPress platform. It is best viewed on one of these modern browsers: <a href="https://www.google.com/chrome/?hl=en&brand=chmo" target="_blank">Chrome</a>, <a href="http://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a>
+
+	        <p>&copy; DemetriDesign.com 2012</p>
+        </div>
+
     </div><!-- .footer-content -->
 </footer>
 
@@ -49,6 +55,20 @@
 			$("#main article hgroup h2").fitText(2, {maxFontSize: '20px'});
 			$("#sidebar article p").fitText(1.25, {maxFontSize: '16px'});
 		});
+	</script>
+
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-28553110-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
 	</script>
 
 <?php wp_footer(); ?>
