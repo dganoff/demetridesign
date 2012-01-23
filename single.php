@@ -41,6 +41,12 @@
 				<?php else : ?>  
 					<?php the_content('Read More'); ?> 
                 <?php endif; ?>
+
+                <span class="post-meta-bottom">
+                    Posted on: <?php the_time(get_option('date_format')); ?> &middot; 
+                    By: <?php the_author(); ?> &middot; 
+                    <?php the_category(', '); ?>
+                </span>
                 
             </article>  
       

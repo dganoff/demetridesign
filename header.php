@@ -2,6 +2,7 @@
 <html lang='en'> 
 
 <head> 
+    
     <title><?php bloginfo('name'); ?> <?php wp_title(); ?></title>
     
     <!-- FlexSlider pieces -->

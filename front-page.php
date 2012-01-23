@@ -163,7 +163,7 @@ Template Name: Homepage
 
                     <?php while ( $work_image->have_posts() ) : $work_image->the_post(); ?>
 
-                        <img src="<?php echo $post->guid; ?>">
+                    <img src="<?php echo $post->guid; ?>">
                     
                     <?php endwhile; ?>
 
@@ -182,7 +182,7 @@ Template Name: Homepage
 
             <h3>Send me a message:</h3>
 
-            <?php echo do_shortcode( '[contact-form-7 id="116" title="Contact"]' ); ?>
+            <?php echo do_shortcode( '[contact-form-7 id="48" title="Contact form 1"]' ); ?>
         
         </article>
     
