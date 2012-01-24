@@ -19,6 +19,12 @@
   
             <article>
             
+                <div class="post-meta-wide">
+                    <span class="date"> <?php the_time(get_option('date_format')); ?> <br> </span>
+                    By: <?php the_author(); ?> <br>
+                    <img src="<?php bloginfo('template_url'); ?>/images/category.png"> <?php the_category('<br>'); ?>
+                </div>
+            
             	<hgroup>
                 	
                     <h1>
@@ -34,19 +40,23 @@
                     
                 </hgroup>
                                 
-                <?php edit_post_link('Edit', '<span class="edit">  ' , '</span>'); ?>
-                            
-                <?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>  
-					<?php the_excerpt(); ?>  
-				<?php else : ?>  
-					<?php the_content('Read More'); ?> 
-                <?php endif; ?>
+                <div class="article-body">
 
-                <span class="post-meta-bottom">
-                    Posted on: <?php the_time(get_option('date_format')); ?> &middot; 
-                    By: <?php the_author(); ?> &middot; 
-                    <?php the_category(', '); ?>
-                </span>
+                    <?php edit_post_link('Edit', '<span class="edit">  ' , '</span>'); ?>
+                                
+                    <?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>  
+    					<?php the_excerpt(); ?>  
+    				<?php else : ?>  
+    					<?php the_content('Read More'); ?> 
+                    <?php endif; ?>
+
+                    <span class="post-meta-bottom">
+                        Posted on: <?php the_time(get_option('date_format')); ?> &middot; 
+                        By: <?php the_author(); ?> &middot; 
+                        <?php the_category(', '); ?>
+                    </span>
+
+                </div>
                 
             </article>  
       

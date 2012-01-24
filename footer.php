@@ -5,9 +5,13 @@
         <?php endif; ?>
 
         <div class="disclaimer">
-	        This site was created with CSS3 and HTML5 on the WordPress platform. It is best viewed on one of these modern browsers: <a href="https://www.google.com/chrome/?hl=en&brand=chmo" target="_blank">Chrome</a>, <a href="http://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a>
+	        <p align="center">
+		        This site was created with CSS3 and HTML5 on the WordPress platform. It is best viewed on one of these modern browsers: <a href="https://www.google.com/chrome/?hl=en&brand=chmo" target="_blank">Chrome</a>, <a href="http://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a>
+	        </p>
 
-	        <p>&copy; DemetriDesign.com 2012</p>
+	        <p align="center">
+	        	Demetri Ganoff &ndash; Web Designer &amp; Front-end Developer in Orlando, FL. &copy; DemetriDesign.com 2012
+	        </p>
         </div>
 
     </div><!-- .footer-content -->
@@ -41,7 +45,7 @@
 <!-- Fittext setup: -->  
 	<script src="<?php bloginfo('template_url'); ?>/scripts/jquery.fittext.js"></script>      
 	<script>
-		$(window).load(function() {
+		$(document).ready(function () {
 			
 			//animations:
 			$(".screens-imgs").fitText(1, {maxFontSize: '52px'});
@@ -52,7 +56,7 @@
 			$(".anim p").fitText(1, {minFontSize: '12px', maxFontSize: '18px'});				
 			
 			$("#main article hgroup h1").fitText(1.5, {maxFontSize: '36px'});
-			$("#main article hgroup h2").fitText(2, {maxFontSize: '20px'});
+			$("#main article hgroup h2").fitText(2.5, {minFontSize: '14px', maxFontSize: '16px'});
 			$("#sidebar article p").fitText(1.25, {maxFontSize: '16px'});
 		});
 	</script>

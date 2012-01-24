@@ -20,6 +20,12 @@ get_header(); ?>
 </section><!-- .featured -->
 	<div class="page-wrap">
 		<section id="main">
+        
+        <nav class="breadcrumbs">
+            
+            <?php include 'breadcrumbs.php'; ?>
+
+        </nav>
 
 			<?php if ( have_posts() ) : ?>
 
@@ -33,24 +39,34 @@ get_header(); ?>
 						 */
 						?>
                         
-                        <article>
+            <article>
+
+            	<div class="post-meta-wide">
+                    <span class="date"> <?php the_time(get_option('date_format')); ?> <br> </span>
+                    By: <?php the_author(); ?> <br>
+                    <img src="<?php bloginfo('template_url'); ?>/images/category.png"> <?php the_category('<br>'); ?>
+                </div>
             
             	<hgroup>
                 	
-                    <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+                    <h1>
+                    	<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                    	<?php comments_popup_link('', '1', '%','comments'); ?>
+                    </h1>
+
                     <h2><?php the_time(get_option('date_format')); ?> &middot; <?php the_author(); ?> &middot; <?php the_category(', '); ?></h2>
                     
                 </hgroup>
-                
-                <span class="comment-count"><?php comments_popup_link('Comment', '1 Comment', '% Comments'); ?></span>
-                
-                <?php edit_post_link('Edit', '<span class="edit">  ' , '</span>'); ?><span class="comment-count"><?php comments_popup_link('Comment', '1 Comment', '% Comments'); ?></span>
-                            
-                <?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>  
-					<?php the_excerpt(); ?>  
-				<?php else : ?>  
-					<?php the_content('Read More'); ?> 
-                <?php endif; ?>
+
+                <div class="article-body">
+	                            
+	                <?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>  
+						<?php the_excerpt(); ?>  
+					<?php else : ?>  
+						<?php the_content('Read More'); ?> 
+	                <?php endif; ?>
+
+                </div><!-- .article-body -->
                 
             </article>
                         

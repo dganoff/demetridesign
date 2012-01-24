@@ -518,6 +518,14 @@ header {
 
 		&:last-child {border-bottom: none;}
 
+		h2 {
+			color: lighten($accent-color,10);
+		}
+
+		h3 {
+			color: lighten($accent-color,20);
+		}
+
 		p {
 			line-height: 1.65em;
 			margin: 1em 0;
@@ -549,6 +557,10 @@ header {
 
 			@media screen and (min-width: 1200px) {
 				margin-left: 160px;
+			}
+
+			h2, h3 {
+				margin: 1.5em 0;
 			}
 		}
 
@@ -588,6 +600,8 @@ header {
 
 			h2 {
 				font-weight: normal;
+				color: #999;
+				line-height: 1.5em;
 
 				@media screen and (min-width: 1200px) {
 					display: none;
@@ -661,10 +675,6 @@ header {
 		@include sidebar-module;
 	}
 
-	p {
-		@include typo(2em);
-	}
-
 	.blogroll {
 		a {display: block;}
 	}
@@ -711,6 +721,12 @@ footer {
 		.disclaimer {
 			clear: both;
 			margin: .5em 0;
+
+			p {
+				font-size: 12px;
+				margin: .25em 0;
+				color: #eee;
+			}
 		}
 	}
 }
@@ -843,7 +859,7 @@ footer {
 .gallery-item {
 	padding: 1em 45px;
 
-	@media screen and (max-width: 600px)  {
+	@media screen and (max-width: 720px)  {
 		padding: 1em .5em;
 	}
 	
@@ -853,7 +869,7 @@ footer {
 		padding: 0 2.4%;
 		border-left: 1px solid #aaa;
 
-		@media screen and (max-width: 600px) {
+		@media screen and (max-width: 720px) {
 			float: none;
 			width: auto;
 			border-left: none;
@@ -864,7 +880,7 @@ footer {
 			// width: 31%;
 			// padding: 0 1%;
 
-			@media screen and (max-width: 600px) {
+			@media screen and (max-width: 720px) {
 				float: none;
 				width: auto;
 			}
@@ -876,7 +892,7 @@ footer {
 		width: 45%;
 		padding: 0 2.4%;
 
-		@media screen and (max-width: 600px) {
+		@media screen and (max-width: 720px) {
 			float: none;
 			width: auto;
 		}
@@ -884,7 +900,7 @@ footer {
 		a {
 			opacity: 0.85;
 
-			@media screen and (max-width: 600px) {
+			@media screen and (max-width: 720px) {
 				opacity: 1;
 			}
 
@@ -970,7 +986,7 @@ $delay: 0s;
 		height: 6em;
 
 		@media screen and (max-width: 420px) { /* to fix the mobile size at first load: */
-			height: 150px;
+			height: 125px;
 		}
 
 		@media screen and (max-width: 600px) {

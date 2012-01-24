@@ -61,7 +61,7 @@
 
                     <p align="right"><?php comments_popup_link('Be the first commenter!', '1 Comment', '% Comments','comments'); ?></p>
 
-                </div> <!-- .article-body -->
+                </div><!-- .article-body -->
                 
             </article>
             

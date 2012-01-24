@@ -31,7 +31,7 @@ Template Name: Homepage
                                             <h1><span>1</span> Flexible</h1><hr>
                                             <h2>Websites should look good on any device!</h2>
                                             <p>New technologies allow us web designers to create beautiful websites for any device.</p>
-                                            <a href="/">Responsive Web Design!</a>
+                                            
                                         </div><!-- .screens-info -->
                                         
                                     </div><!-- .screens -->
@@ -68,7 +68,7 @@ Template Name: Homepage
                                             <h1><span>3</span> Engage</h1><hr>
                                             <h2>User-centered design creates repeat-visits!</h2>
                                             <p>Create a pleasant experience for your visitors and you will be rewarded with higher traffic.</p>
-                                            <a href="/">Contact Me</a>
+                                            <a href="/#contact-me">Contact Me</a>
                                         </div>
                                         
                                     </div><!-- .engage -->
@@ -93,7 +93,7 @@ Template Name: Homepage
                 	
         <article class="blog-preview">
                 
-            <h1><a href="/">blog</a></h1>
+            <h1><a href="/blog/">blog</a></h1>
             
             <?php query_posts('posts_per_page=3'); ?>
             
@@ -131,10 +131,10 @@ Template Name: Homepage
         
         <article class="work-preview">
             
-            <h1><a href="/">my work</a></h1>
+            <h1><a href="/my-work/">my work</a></h1>
             
             <?php
-                $args = array( 'post_type' => 'work', 'posts_per_page' => 10 );
+                $args = array( 'post_type' => 'work', 'posts_per_page' => 3 );
                 $loop = new WP_Query( $args );
                 ?>
                 
@@ -173,16 +173,16 @@ Template Name: Homepage
         
         </article>
         
-        <article class="contact-preview">
+        <article class="contact-preview" id="contact-me">
             
-            <h1><a href="/">contact me</a></h1>
+            <h1><a href="/#contact">contact me</a></h1>
 
-            <a href="/" class="twitter">Follow Me</a>
-            <a href="/" class="linkedin">LinkedIn</a>
+            <a href="https://twitter.com/#!/DGanoff" class="twitter">Follow Me</a>
+            <a href="http://www.linkedin.com/pub/demetri-ganoff/2b/97a/a58" class="linkedin">LinkedIn</a>
 
             <h3>Send me a message:</h3>
 
-            <?php echo do_shortcode( '[contact-form-7 id="48" title="Contact form 1"]' ); ?>
+            <?php echo do_shortcode( '[contact-form-7 id="41" title="Contact Me"]' ); ?>
         
         </article>
     

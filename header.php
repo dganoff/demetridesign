@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang='en'> 
 
-<head> 
+<head>
     
-    <title><?php bloginfo('name'); ?> <?php wp_title(); ?></title>
+    <title><?php wp_title(''); ?></title>
+
+    <meta name="viewport" content="initial-scale=1.0; user-scalable=yes" />
+
+    <link rel="icon" href="/favicon.png"/>
     
     <!-- FlexSlider pieces -->
     <link href="<?php bloginfo('stylesheet_directory'); ?>/css/flexslider.css" rel="stylesheet" type="text/css" media="screen" />

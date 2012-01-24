@@ -10,7 +10,13 @@ Template Name: Works
 
 	<div class="page-wrap">
 		
-		<h1><?php the_title(); ?></h1>
+		<?php if (have_posts()) : while (have_posts()) : the_post();?>
+
+			<h1><?php the_title(); ?></h1>
+			
+			<?php the_content('Read More'); ?>
+
+		<?php endwhile; endif; ?>
 
 	<div><!-- .page-wrap -->
 
