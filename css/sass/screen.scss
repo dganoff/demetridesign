@@ -547,7 +547,7 @@ header {
 
 			.date {
 				// Type:
-				color: #ccc;
+				color: #aaa;
 				font-size: 24px;
 			}
 		}
@@ -641,10 +641,6 @@ header {
 	@media screen and (max-width: 720px) {
 		float: none;
 		width: auto;
-
-		p {
-			display: none;
-		}
 	}
 
 	
@@ -658,7 +654,7 @@ header {
 		color: white;
 		font-size: 1.25em;
 
-		@include arrow-left(#333,9px,white); //styles any anchor tags in this nest for the arrow
+		// @include arrow-left(#333,9px,white); //styles any anchor tags in this nest for the arrow
 	}
 
 	h2 {
@@ -673,6 +669,16 @@ header {
 
 	.sidebar-module {
 		@include sidebar-module;
+
+		.tweets {
+			li {
+				border-bottom: 1px dashed lighten($accent-color, 40);
+
+				a {
+					display: inline;
+				}
+			}
+		}
 	}
 
 	.blogroll {

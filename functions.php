@@ -36,12 +36,12 @@ if ( function_exists( 'wp_nav_menu' ) ){
 ///////////////////////////////////
 // register the sidebar formatting:
 ///////////////////////////////////
-if ( function_exists('register_sidebar') )  
+if ( function_exists('register_sidebar') )
     register_sidebar(array(  
     'name' => 'sidebar',  
-    'before_widget' => '<div class="sidebar-module">',  
-    'after_widget' => '</div>',  
-    'before_title' => '<h1>',  
+    'before_widget' => '<div class="sidebar-module %2$s">',  
+    'after_widget' => '</div>',
+    'before_title' => '<h1>',
     'after_title' => '</h1>'
 ));
 
