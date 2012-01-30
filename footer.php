@@ -24,7 +24,7 @@
 	<script src="<?php bloginfo('template_url'); ?>/scripts/jquery.flexslider-min.js"></script>
     <!-- Hook up the FlexSlider -->
     <script type="text/javascript">
-        $(window).load(function() {
+        $(document).ready(function () {
             $('.flexslider').flexslider({
 				animation: "slide",
 				controlsContainer: ".flex-container",

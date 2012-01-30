@@ -164,7 +164,7 @@
 
 		li {
 			a {
-				display: block;
+				// display: block;
 				line-height: 1em;
 			}
 
@@ -306,12 +306,12 @@ article {
 }
 
 /* Forms: */
-input, textarea {
+input, textarea, select {
 	display: block;
 	background: white;
 	padding: .25em;
 	border: 2px solid lighten($accent-color,40);
-	@include border-radius(8px,8px,8px,8px);
+	@include border-radius(4px,4px,4px,4px);
 
 	// Type:
 	font-family: $fonts-body;
@@ -355,6 +355,31 @@ input, textarea {
 		background: url(../../images/search.png) center left no-repeat;
 		border: 0 none;
 		text-indent: -9999px;
+	}
+}
+
+input[type=submit] {
+	@include gradient(lighten($link-color,20),$link-color);
+	background-color: $link-color;
+	border-color: $link-color;
+	box-shadow: inset 0px 0px 1px lighten($link-color,80);
+
+	// Font:
+	font-family: 'Ubuntu Condensed', sans-serif;
+	color: white;
+	text-transform: uppercase;
+	text-shadow: 0px -1px 0px darken($link-color,40);
+
+	&:hover {
+		border-color: darken($link-color,10);
+		@include gradient(lighten($link-color,10),$link-color);
+		background-color: $link-color;
+	}
+
+	&:active {
+		@include gradient($link-color, lighten($link-color,10));
+		text-shadow: 0px 1px 0px darken($link-color,40);
+		background-color: $link-color;
 	}
 }
 
@@ -429,6 +454,7 @@ header {
 					margin: 0;
 					height: $nav-height;
 					min-width: 45px;
+					cursor: pointer;
 
 					// Type:
 					text-align: center;
@@ -669,14 +695,14 @@ header {
 
 	.sidebar-module {
 		@include sidebar-module;
+	}
 
-		.tweets {
-			li {
-				border-bottom: 1px dashed lighten($accent-color, 40);
+	.widget_twitter {
+		li {
+			border-bottom: 1px dashed lighten($accent-color, 40);
 
-				a {
-					display: inline;
-				}
+			a {
+				display: inline;
 			}
 		}
 	}

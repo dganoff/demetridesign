@@ -50,7 +50,7 @@
                     <?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>  
     					<?php the_excerpt(); ?>  
     				<?php else : ?>  
-    					<?php the_content('Read More'); ?> 
+    					<?php the_excerpt(); // the_content('Read More'); ?> 
                     <?php endif; ?>
 
                     <span class="post-meta-bottom">
@@ -69,8 +69,8 @@
         
         <?php //check if there are more than 1 posts resulting from the above loop ?>
         <?php if ( $wp_query->max_num_pages > 1 ) : ?>  
-                <div id="older-posts"><?php next_posts_link('Older Posts'); ?></div>  
-                <div id="newer-posts"><?php previous_posts_link('Newer Posts'); ?></div>  
+                <div id="older-posts"><?php next_posts_link('&laquo; Older Posts'); ?></div>  
+                <div id="newer-posts"><?php previous_posts_link('Newer Posts &raquo;'); ?></div>  
         <?php else: ?>  
                 <div id="only-page">No newer/older posts</div>  
         <?php endif; ?>

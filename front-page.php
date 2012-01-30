@@ -101,7 +101,7 @@ Template Name: Homepage
                     <h2>Not Found</h2>
                     <p>Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post</p>  
             <?php endif; ?>  
-              
+
             <?php while ( have_posts() ) : the_post(); ?>
             
                 <article>
@@ -182,7 +182,7 @@ Template Name: Homepage
 
             <h3>Send me a message:</h3>
 
-            <?php echo do_shortcode( '[contact-form-7 id="41" title="Contact Me"]' ); ?>
+            <?php echo do_shortcode( '[contact-form-7 id="48" title="Contact form 1"]' ); ?>
         
         </article>
     
