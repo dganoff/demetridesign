@@ -242,6 +242,16 @@ h2 {
 	color: #999;
 }
 
+blockquote {
+	border-top: 2px solid lighten($link-color,40);
+	border-bottom: 2px solid lighten($link-color,40);
+
+	p {
+		font-style: italic;
+		color: lighten(black,20);
+	}
+}
+
 section {
 	overflow: auto;
 }
