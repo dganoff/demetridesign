@@ -216,10 +216,28 @@ hr {
 a:link, a:visited {
 	color: $link-color;
 	text-decoration: none;
+	@include transition(.25s,ease);
 }
 
 a:hover {
-	color: darken($link-color,10);
+	color: darken($link-color,10);	
+}
+
+a.threedlink {
+	color: #555;
+	font-size: 2em;
+	border-bottom: none;
+	font-weight: bold;
+
+	text-shadow: 3px 3px 0px rgba(#FF513D,.5), -3px -3px 0px rgba($link-color,.5);
+	@include transition(.25s,ease);
+	
+	&:hover {
+		color: #222;
+		border-bottom: none;
+
+		text-shadow: 0px 0px 0px rgba(#BF4C40,0), 0px 0px 0px rgba($link-color,0);
+	}
 }
 
 h1, h2, h3 {
