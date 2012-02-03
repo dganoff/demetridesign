@@ -109,16 +109,13 @@ Template Name: Homepage
                 	<hgroup>
                     
                     	<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-                        <h2>
-                            <?php the_time(get_option('date_format')); ?> &middot; By: <?php the_author(); ?> &middot; <?php the_category(', '); ?>
-                        </h2>
                         
                     </hgroup>
                     
                     <p>
 					<?php 
 						$excerpt = get_the_excerpt();
-						echo string_limit_words($excerpt,10);
+						echo string_limit_words($excerpt,20);
 						echo ' <a class="moretag" href="'. get_permalink($post->ID) . '">Continue Reading...</a>'
 					?>
                     </p>
