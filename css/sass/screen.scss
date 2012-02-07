@@ -435,6 +435,11 @@ nav.social {
 	background: url(../../images/linkedin.png) left center no-repeat;
 }
 
+.contact-link {
+	@include social-link;
+	background: url(../../images/contact-link.png) left center no-repeat;
+}
+
 /* Header styles: */
 header {
 	display: block;
