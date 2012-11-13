@@ -72,7 +72,7 @@
                 <div id="older-posts"><?php next_posts_link('&laquo; Older Posts'); ?></div>  
                 <div id="newer-posts"><?php previous_posts_link('Newer Posts &raquo;'); ?></div>  
         <?php else: ?>  
-                <div id="only-page">No newer/older posts</div>  
+                <div id="only-page">No more posts... :(</div>
         <?php endif; ?>
         
     </section><!-- #main -->

@@ -10,7 +10,7 @@
 	        </p>
 
 	        <p align="center">
-	        	Demetri Ganoff &ndash; Web Designer &amp; Front-end Developer in Orlando, FL. &copy; DemetriDesign.com 2012
+	        	Demetri Ganoff &ndash; Web Designer &amp; Front-end Developer in Winston-Salem, NC. &copy; <a href="http://www.demetridesign.com">DemetriDesign.com</a> 2012
 	        </p>
         </div>
 
