@@ -51,10 +51,9 @@ get_header(); ?>
                 	
                     <h1>
                     	<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                    	<?php comments_popup_link('', '1', '%','comments'); ?>
                     </h1>
 
-                    <h2><?php the_time(get_option('date_format')); ?> &middot; <?php the_author(); ?> &middot; <?php the_category(', '); ?></h2>
+                    <h2><?php the_time(get_option('date_format')); ?> &middot; <?php the_author(); ?></h2>
                     
                 </hgroup>
 

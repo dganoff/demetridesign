@@ -166,6 +166,10 @@
 			a {
 				// display: block;
 				line-height: 1em;
+
+				&:hover {
+					text-decoration: underline;
+				}
 			}
 
 			margin-bottom: .5em;
@@ -600,8 +604,12 @@ header {
 		.post-meta-wide {
 			display: none;
 			float: left;
-			width: 150px;
+			width: 130px;
+			padding-right: 1em;
+			margin-right: 1em;
 			padding-top: 1em;
+			font-family: $fonts-headings;
+			text-align: right;
 
 			@media screen and (min-width: 1200px) {
 				display: block;
@@ -611,6 +619,7 @@ header {
 				// Type:
 				color: #aaa;
 				font-size: 24px;
+				font-weight: normal;
 			}
 		}
 
@@ -693,6 +702,7 @@ header {
 	float: right;
 	width: $sidebar-width - $gutter;
 	padding: 1em ($gutter/2);
+	margin-bottom: 1.5em;
 	overflow: auto;
 	background: $sidebar-bg;
 	@include transition(.25s,ease);
@@ -710,7 +720,7 @@ header {
 	h1 {
 		padding: 0 0 0 10px;
 		line-height: 2;
-		background-color: $accent-color;
+		background-color: lighten(desaturate($link-color,90),10);
 		@include border-radius(5px,5px,5px,5px);
 
 		// Type:
@@ -808,6 +818,7 @@ footer {
 	
 	border-top: 4px solid $link-color;
 	border-bottom: 4px solid $link-color;
+	margin-bottom: 1em;
 
 	@media screen and (max-width: 720px) {
 		.page-wrap {
