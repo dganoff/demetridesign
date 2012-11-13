@@ -26,7 +26,7 @@
 	$nav-height: 80px;
 
 	// fonts:
-	$fonts-headings: 'Lusitana', Georgia, "Times New Roman", serif;//'Ubuntu Condensed', sans-serif;
+	$fonts-headings: 'Ubuntu Condensed', sans-serif; //'Lusitana', Georgia, "Times New Roman", serif;
 	$fonts-body: 'Lusitana', Georgia, "Times New Roman", serif;//'Buenard', serif;
 
 // Functions:
@@ -567,13 +567,15 @@ header {
 	float: left;
 	width: $main-width;
 	padding: 1em ($gutter/2);
+	margin-bottom: 1.5em;
 	overflow: auto;
 	background: $main-bg;
 	@include border-radius(5px,5px,5px,5px);
+	border: 1px solid lighten($accent-color, 60);
 
 	article {
 		margin-bottom: 2em;
-		border-bottom: 1px dotted #ccc;
+		border-bottom: 2px dotted lighten($accent-color,60);
 
 		&:last-child {border-bottom: none;}
 
@@ -626,7 +628,6 @@ header {
 
 		hgroup {
 			overflow: auto;
-			border-bottom: 1px solid lighten($accent-color,40);
 
 			h1 {
 				margin: .25em 0;
@@ -662,6 +663,7 @@ header {
 				font-weight: normal;
 				color: #999;
 				line-height: 1.5em;
+				font-size: 14px;
 
 				@media screen and (min-width: 1200px) {
 					display: none;
@@ -695,6 +697,7 @@ header {
 	background: $sidebar-bg;
 	@include transition(.25s,ease);
 	@include border-radius(5px,5px,5px,5px);
+	border: 1px solid lighten($accent-color, 60);
 
 	// Type:
 
@@ -871,7 +874,7 @@ footer {
 				text-shadow: none;
 				text-align: left;
 
-				font-family: 'Lusitana', Sans-Serif;
+				font-family: $fonts-headings;
 
 				a {
 					color: $accent-color;
@@ -1013,6 +1016,7 @@ footer {
 		font-family: 'Ubuntu Condensed', sans-serif;
 		font-size: 46px;
 		text-transform: uppercase;
+		color: $link-color;
 
 		span {
 			padding-right: .25em;
@@ -1025,7 +1029,7 @@ footer {
 	h2 {
 		color: #ccc;
 		margin: .25em 0;
-		font-style: italic;
+		font-weight: normal;
 	}
 
 	p {

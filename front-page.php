@@ -65,7 +65,7 @@ Template Name: Homepage
                                         </div>
                                         
                                         <div class="engage-info">
-                                            <h1><span>3</span> Engage</h1><hr>
+                                            <h1><span>3</span> Engaging</h1><hr>
                                             <h2>User-centered design creates repeat-visits!</h2>
                                             <p>Create a pleasant experience for your visitors and you will be rewarded with higher traffic.</p>
                                             <a href="/#contact-me" class="contact-link">Contact Me</a>
