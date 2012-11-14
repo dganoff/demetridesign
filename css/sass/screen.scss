@@ -147,7 +147,7 @@
 @mixin sidebar-module {
 
 	margin-top: 1em;
-	border-bottom: 1px dotted #ccc;
+	// border-bottom: 1px dotted #ccc;
 
 	&:first-child {
 		margin-top: 0px;
@@ -718,13 +718,14 @@ header {
 
 	
 	h1 {
-		padding: 0 0 0 10px;
+		padding: 0 0 0 0.25em;
 		line-height: 2;
-		background-color: lighten(desaturate($link-color,90),10);
-		@include border-radius(5px,5px,5px,5px);
+		// background-color: lighten(desaturate($link-color,90),10);
+		// @include border-radius(5px,5px,5px,5px);
+		border-bottom: 2px solid lighten($accent-color, 60);
 
 		// Type:
-		color: white;
+		color: lighten($accent-color,30);
 		font-size: 1.25em;
 
 		// @include arrow-left(#333,9px,white); //styles any anchor tags in this nest for the arrow
