@@ -400,7 +400,7 @@ input[type=submit] {
 	font-family: 'Ubuntu Condensed', sans-serif;
 	color: white;
 	text-transform: uppercase;
-	text-shadow: 0px -1px 0px darken($link-color,40);
+	text-shadow: 0px 1px 1px darken($link-color,10);
 
 	&:hover {
 		border-color: darken($link-color,10);
@@ -410,7 +410,7 @@ input[type=submit] {
 
 	&:active {
 		@include gradient($link-color, lighten($link-color,10));
-		text-shadow: 0px 1px 0px darken($link-color,40);
+		text-shadow: 0px -1px 0px darken($link-color,20);
 		background-color: $link-color;
 	}
 }

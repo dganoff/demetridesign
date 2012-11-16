@@ -15,7 +15,7 @@
                 <p>Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post</p>  
         <?php endif; ?>  
           
-        <?php while ( have_posts() ) : the_post(); ?>
+        <?php while ( have_posts('posts_per_page=3') ) : the_post(); ?>
             
             <article>
             
