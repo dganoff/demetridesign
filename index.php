@@ -30,14 +30,12 @@
                     <h1>
 
                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                        <!--<?php comments_popup_link('', '1', '%','comments'); ?>-->
 
                     </h1>
                     <h2>
 
                         <?php the_time(get_option('date_format')); ?> &middot; 
-                        By: <?php the_author(); ?> <!-- &middot;  -->
-                        <!-- <img src="<?php bloginfo('template_url'); ?>/images/category.png"> <?php the_category(', '); ?> -->
+                        By: <?php the_author(); ?>
 
                     </h2>
                     
@@ -52,14 +50,6 @@
     				<?php else : ?>  
     					<?php the_excerpt(); // the_content('Read More'); ?> 
                     <?php endif; ?>
-
-                    <!-- <span class="post-meta-bottom">
-                        Posted on: <?php the_time(get_option('date_format')); ?> &middot; 
-                        By: <?php the_author(); ?> &middot; 
-                        <?php the_category(', '); ?>
-                    </span> -->
-
-                    <!-- <p align="right"><?php comments_popup_link('Be the first commenter!', '1 Comment', '% Comments','comments'); ?></p> -->
 
                 </div><!-- .article-body -->
                 
