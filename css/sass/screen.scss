@@ -636,6 +636,10 @@ header {
 			h2, h3 {
 				margin: 1.5em 0;
 			}
+
+			p {
+				word-break: break-all;
+			}
 		}
 
 		hgroup {
@@ -751,6 +755,8 @@ header {
 	.widget_twitter {
 		li {
 			border-bottom: 1px dashed lighten($accent-color, 40);
+			font-size: .9em;
+			line-height: 1.5em;
 
 			a {
 				display: inline;

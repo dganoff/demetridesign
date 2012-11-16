@@ -55,9 +55,9 @@
 			$(".anim h2").fitText(1.5, {minFontSize: '14px', maxFontSize: '24px'});
 			$(".anim p").fitText(1, {minFontSize: '12px', maxFontSize: '18px'});				
 			
-			$("#main article hgroup h1").fitText(1.5, {minFontSize: '22px', maxFontSize: '36px'});
+			// $("#main article hgroup h1").fitText(1.5, {minFontSize: '22px', maxFontSize: '36px'});
 			// $("#main article hgroup h2").fitText(2.5, {minFontSize: '14px', maxFontSize: '16px'});
-			$("#sidebar article p").fitText(1.25, {maxFontSize: '16px'});
+			// $("#sidebar article p").fitText(1.25, {maxFontSize: '16px'});
 		});
 	</script>
 
