@@ -2,7 +2,7 @@
 
 <div class="page-wrap">
 
-	<section id="main">
+	<section id="main">  
 
         <nav class="breadcrumbs">
             

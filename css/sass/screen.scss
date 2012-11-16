@@ -198,7 +198,7 @@ a:focus {
 
 body {
 	scroll-y: auto;
-	background: url(../../images/texture.png) $bg-color;
+	background: url(../../images/texture.png) $bg-color center center;
 
 	// Type:
 	font-family: $fonts-body;
@@ -335,6 +335,18 @@ article {
 	font-family: arial, Helvetica, Sans-Serif;
 	font-size: 11px;
 	text-transform: uppercase;
+	
+	#main & {
+		position: relative;
+		display:inline-block;
+		top: -1rem;
+		left: -2.5%;
+		padding: .5em 1em;
+		background: #eaeaea;
+		border-right: 1px solid lighten($accent-color, 60);
+		border-bottom: 1px solid lighten($accent-color, 60);
+		@include border-radius(0,0,.5em,0);
+	}
 }
 
 /* Forms: */
