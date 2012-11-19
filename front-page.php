@@ -91,9 +91,9 @@ Template Name: Homepage
 
 	<section class="home-featured">
                 	
-        <article class="blog-preview">
+        <section class="blog-preview">
                 
-            <h1><a href="/blog/">blog</a></h1>
+            <h1><a class="blog" href="/blog/">blog</a></h1>
             
             <?php query_posts('posts_per_page=3'); ?>
             
@@ -124,11 +124,11 @@ Template Name: Homepage
             
             <?php endwhile; ?>
         
-        </article>
+        </section>
         
-        <article class="work-preview">
+        <section class="work-preview">
             
-            <h1><a href="/my-work/">my work</a></h1>
+            <h1><a class="work" href="/my-work/">my work</a></h1>
             
             <?php
                 $args = array( 'post_type' => 'work', 'posts_per_page' => 3 );
@@ -168,11 +168,11 @@ Template Name: Homepage
 
             <?php endwhile; ?>
         
-        </article>
+        </section>
         
-        <article class="contact-preview" id="contact-me">
+        <section class="contact-preview" id="contact-me">
             
-            <h1><a href="/#contact">contact me</a></h1>
+            <h1><a class="contact" href="/#contact">contact me</a></h1>
 
             <a href="https://twitter.com/#!/DGanoff" class="twitter">Follow Me</a>
             <a href="http://www.linkedin.com/pub/demetri-ganoff/2b/97a/a58" class="linkedin">LinkedIn</a>
@@ -181,7 +181,7 @@ Template Name: Homepage
 
             <?php echo do_shortcode( '[contact-form-7 id="48" title="Contact form 1"]' ); ?>
         
-        </article>
+        </section>
     
     </section><!-- .home-features -->
     

@@ -893,23 +893,53 @@ footer {
 	// @include border-radius(1em,1em,1em,1em);
 	// background: white;
 	overflow: auto;
-	padding: 1em 0;
+	padding: 0 0 1em;
 
 	input, textarea {
 		width: 95%;
 		margin: 1em 0;
 	}
 
-	> article {
+	> section {
 		float: left;
 		width: 33% - $home-gutter;
-		padding: 5em ($home-gutter/2) 0 ($home-gutter/2);
+		padding: 1em ($home-gutter/2) 0 ($home-gutter/2);
 
-		h1 {
+		> h1 {
 			text-align: center;
-			margin: .5em 0;
+			margin: 0 0 .5em;
 			text-transform: uppercase;
-			font-family: 'Ubuntu Condensed', Sans-Serif;
+
+			a { // preview heading button/link
+				padding-top: 90px;
+				display:block;
+				width: 180px;
+				margin: 0 auto;
+
+				&.blog {
+					background: url(../../images/preview-bg-blog.png) center top no-repeat;
+
+					&:hover {
+						background-position: center 10px;
+					}
+				}
+
+				&.work {
+					background: url(../../images/preview-bg-work.png) center top no-repeat;
+
+					&:hover {
+						background-position: center 10px;
+					}
+				}
+
+				&.contact {
+					background: url(../../images/preview-bg-contact.png) center top no-repeat;
+
+					&:hover {
+						background-position: center 10px;
+					}
+				}
+			}
 		}
 
 		@media screen and (max-width: 780px) {
@@ -942,19 +972,6 @@ footer {
 		}
 	}
 
-	.blog-preview {
-		background: url(../../images/preview-bg-blog.png) center top no-repeat;
-	}
-
-	.work-preview {
-		background: url(../../images/preview-bg-work.png) center top no-repeat;
-		text-align: center;
-	}
-
-	.contact-preview {
-		background: url(../../images/preview-bg-contact.png) center top no-repeat;
-	}
-
 	.work-thumb {
 		margin: 1em 0;
 		opacity: 0.8;
@@ -981,39 +998,14 @@ footer {
 	@media screen and (max-width: 720px)  {
 		padding: 1em .5em;
 	}
-	
-	.gallery-info {
-		float: right;
-		width: 45%;
-		padding: 0 2.4%;
-		border-left: 1px solid #aaa;
 
-		@media screen and (max-width: 720px) {
-			float: none;
-			width: auto;
-			border-left: none;
-		}
-
-		div {
-			// float: left;
-			// width: 31%;
-			// padding: 0 1%;
-
-			@media screen and (max-width: 720px) {
-				float: none;
-				width: auto;
-			}
-		}
-	}
-
-	.gallery-media {
+	.gallery-content {
 		float: left;
-		width: 45%;
-		padding: 0 2.4%;
+		width: 50%;
 
 		@media screen and (max-width: 720px) {
 			float: none;
-			width: auto;
+			width: 100%;
 		}
 
 		a {
@@ -1029,7 +1021,18 @@ footer {
 				opacity: 1;
 			}
 		}
+
+		.gallery-info {
+			padding: 0 1em;
+
+			@media screen and (max-width: 720px) {
+				float: none;
+				width: auto;
+				border-left: none;	
+			}
+		}
 	}
+	
 }
 
 /* Animations: ========================================================================================= */

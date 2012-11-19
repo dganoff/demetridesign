@@ -37,21 +37,8 @@
         <?php while ( have_posts() ) : the_post(); ?>
             
             <article class="gallery-item">
-                            
-                <section class="gallery-info">
                 
-					<h3>My Involvement</h3>
-					<p><?php echo $involvement ?></p>
-
-					<h3>Objective</h3>
-					<p><?php echo $objective ?></p>
-                    
-                    <h3>Technologies</h3>
-                    <code><?php echo $technologies; ?></code>
-                
-                </section>
-                
-                <section class="gallery-media">
+                <section class="gallery-content">
                 	
                     <a href="<?php echo $address ?>" target="_blank" title="Go to Live Site...">
 
@@ -64,6 +51,23 @@
 					<?php wp_reset_postdata(); // Reset the loop ?>
                 
                 </section>
+            	
+            	<section class="gallery-content">
+            		
+            		<div class="gallery-info">
+                
+						<h3>My Involvement</h3>
+						<p><?php echo $involvement ?></p>
+
+						<h3>Objective</h3>
+						<p><?php echo $objective ?></p>
+	                    
+	                    <h3>Technologies</h3>
+	                    <code><?php echo $technologies; ?></code>
+            			
+            		</div>
+            		
+            	</section>
                 
             </article>
             
