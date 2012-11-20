@@ -5,12 +5,12 @@
         <?php endif; ?>
 
         <div class="disclaimer">
-	        <p align="center">
-		        This site was created with CSS3 and HTML5 on the WordPress platform. It is best viewed on one of these modern browsers: <a href="https://www.google.com/chrome/?hl=en&brand=chmo" target="_blank">Chrome</a>, <a href="http://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a>
-	        </p>
-
-	        <p align="center">
+	        <p>
 	        	Demetri Ganoff &ndash; Web Designer &amp; Front-end Developer in Winston-Salem, NC. &copy; <a href="http://www.demetridesign.com">DemetriDesign.com</a> 2012
+	        </p>
+	        	        
+	        <p>
+		        This site was created with CSS3 and HTML5 on the WordPress platform. It is best viewed on one of these modern browsers: <a href="https://www.google.com/chrome/?hl=en&brand=chmo" target="_blank">Chrome</a>, <a href="http://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a>
 	        </p>
         </div>
 

@@ -27,7 +27,7 @@
 
 	// fonts:
 	$fonts-headings: 'Ubuntu Condensed', sans-serif; //'Lusitana', Georgia, "Times New Roman", serif;
-	$fonts-body: 'Lusitana', Georgia, "Times New Roman", serif;//'Buenard', serif;
+	$fonts-body: 'Adamina', Georgia, "Times New Roman", serif; //'Lusitana'
 
 // Functions:
 
@@ -203,6 +203,10 @@ body {
 	// Type:
 	font-family: $fonts-body;
 	@include typo(16px);
+
+	@media screen and (max-width: 720px) {
+		@include typo(12px);
+	}
 }
 
 * img {
@@ -609,7 +613,7 @@ header {
 			margin: 1em 0;
 
 			&:first-of-type {
-				font-size: 18px;
+				font-size: 1.1em;
 			}
 		}
 
@@ -805,11 +809,11 @@ footer {
 	border-top: 4px solid $link-color;
 
 	.footer-content {
-		padding: 1em;
+		padding: 1em 0 2em;
 
 		// Type:
 		color: white;
-		font-family: 'Ubuntu Condensed', sans-serif;
+		font-family: $fonts-headings;
 
 		nav {
 			display: inline-block;
@@ -837,13 +841,18 @@ footer {
 		}
 
 		.disclaimer {
-			clear: both;
-			margin: .5em 0;
+			margin: 1em 0;
+			overflow: hidden;
+
+			@media screen and (max-width: 720px) {
+				clear: both;
+			}
 
 			p {
-				font-size: 12px;
+				font-size: 1.25em;
 				margin: .25em 0;
-				color: #eee;
+				color: lighten($accent-color, 20);
+				line-height: 1.45em;
 			}
 		}
 	}
