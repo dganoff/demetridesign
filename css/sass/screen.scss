@@ -834,7 +834,7 @@ footer {
 						padding-bottom: .25em;
 
 						// Type:
-						font-family: 'Ubuntu Condensed', sans-serif;
+						font-family: $fonts-headings;
 					}
 				}
 			}
@@ -881,7 +881,7 @@ footer {
 	overflow: hidden;
 
 	/* Type; */
-	font-family: 'Ubuntu Condensed', sans-serif;
+	font-family: $fonts-headings;
 
 	h1 {
 		margin: .25em 0;

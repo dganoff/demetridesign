@@ -85,13 +85,13 @@ Template Name: Works
 									
 									<div class="gallery-info">
 		            
-					                    <h3>My Involvement</h3>
+					                    <h1>My Involvement</h1>
 										<p><?php echo $involvement ?></p>
 
-										<h3>Objective</h3>
+										<h1>Objective</h1>
 										<p><?php echo $objective ?></p>
 					                    
-					                    <h3>Technologies</h3>
+					                    <h1>Technologies</h1>
 					                    <code><?php echo $technologies; ?></code>
 					                
 					                </div>
