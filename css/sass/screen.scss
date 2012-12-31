@@ -39,6 +39,32 @@
 	transition: $type $length $anim;
 }
 
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content
+  }
+  @-moz-keyframes #{$name} {
+    @content
+  }
+  @-ms-keyframes #{$name} {
+    @content
+  }
+  @-o-keyframes #{$name} {
+    @content
+  }
+  @keyframes #{$name} {
+    @content
+  }
+}
+
+@mixin animation($value) {
+  -webkit-animation: $value;
+  -moz-animation: $value;
+  -ms-animation: $value;
+  -o-animation: $value;
+  animation: $value;
+}
+
 @mixin border-radius ($tl:5px,$tr:5px,$br:5px,$bl:5px) {
 	border-radius: $tl $tr $br $bl;
 }
@@ -204,8 +230,8 @@ body {
 	font-family: $fonts-body;
 	@include typo(16px);
 
-	@media screen and (max-width: 720px) {
-		@include typo(12px);
+	@media screen and (max-width: 520px) {
+		@include typo(14px);
 	}
 }
 
@@ -403,6 +429,11 @@ input, textarea, select {
 		background: url(../../images/search.png) center left no-repeat;
 		border: 0 none;
 		text-indent: -9999px;
+
+		&:hover, &:active {
+			background: url(../../images/search.png) center left no-repeat;
+			-webkit-filter: invert(.4);
+		}
 	}
 }
 
@@ -464,6 +495,8 @@ nav.social {
 header {
 	display: block;
 	z-index: 9999;
+	position: relative;
+	@include animation(fadeInLoad 1.5s ease-out);
 
 	nav.main {
 		ul {
@@ -808,6 +841,10 @@ footer {
 	background: url(../../images/texture-dark.png) $home-main-bg;
 	border-top: 4px solid $link-color;
 
+	@media screen and (max-width: 720px) {
+		padding: 0 1em;
+	}
+
 	.footer-content {
 		padding: 1em 0 2em;
 
@@ -841,7 +878,6 @@ footer {
 		}
 
 		.disclaimer {
-			margin: 1em 0;
 			overflow: hidden;
 
 			@media screen and (max-width: 720px) {
@@ -850,9 +886,7 @@ footer {
 
 			p {
 				font-size: 1.25em;
-				margin: .25em 0;
 				color: lighten($accent-color, 20);
-				line-height: 1.45em;
 			}
 		}
 	}
@@ -879,6 +913,8 @@ footer {
 .home-intro {
 	padding: 1em ($home-gutter/2);
 	overflow: hidden;
+
+	@include animation(fadeInLoad 2s ease-out);
 
 	/* Type; */
 	font-family: $fonts-headings;
@@ -1569,4 +1605,11 @@ $delay: 0s;
 		opacity: 1;
 		-moz-transform: scale(1.01);
 	}
+}
+
+// fade in on load:
+@include keyframes(fadeInLoad) {
+  0%   { opacity: 0; -webkit-transform: translateY(20px); -moz-transform: translateY(20px); }
+  50% { opacity: 0;}
+  100% { opacity: 1; -webkit-transform: translateY(0); -moz-transform: translateY(0);}
 }
