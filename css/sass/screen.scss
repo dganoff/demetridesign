@@ -885,8 +885,13 @@ footer {
 			}
 
 			p {
-				font-size: 1.25em;
+				font-size: 1.15em;
 				color: lighten($accent-color, 20);
+
+				&:first-child {
+					font-size: 1.5em;
+					color: lighten($accent-color,30);
+				}
 			}
 		}
 	}

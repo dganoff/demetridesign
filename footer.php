@@ -6,11 +6,11 @@
 
         <div class="disclaimer">
 	        <p>
-	        	Demetri Ganoff &ndash; Web Designer &amp; Front-end Developer in Winston-Salem, NC. &copy; <a href="http://www.demetridesign.com">DemetriDesign.com</a> 2012
+	        	<a href="https://twitter.com/#!/DGanoff">Demetri Ganoff</a> &ndash; Web Designer &amp; Front-end Developer in Winston-Salem, NC.
 	        </p>
 	        	        
 	        <p>
-		        This site was created with CSS3 and HTML5 on the WordPress platform. It is best viewed on one of these modern browsers: <a href="https://www.google.com/chrome/?hl=en&brand=chmo" target="_blank">Chrome</a>, <a href="http://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a>
+		        This site was created with <a href="http://css3please.com/">CSS3</a> and <a href="http://www.html5rocks.com/en/">HTML5</a> on the <a href="http://wordpress.org/">WordPress</a> platform. It is best viewed on one of these modern browsers: <a href="https://www.google.com/chrome/?hl=en&brand=chmo" target="_blank">Chrome</a>, <a href="http://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a>  <br> &copy; <a href="http://www.demetridesign.com">DemetriDesign.com</a> 2013
 	        </p>
         </div>
 
