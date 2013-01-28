@@ -1,0 +1,22 @@
+/* Forms: */
+input, textarea, select {
+	display: block;
+	background: white;
+	padding: .25em;
+	border: 2px solid lighten($accent-color,40);
+	@include border-radius(4px,4px,4px,4px);
+
+	// Type:
+	font-family: $fonts-body;
+
+	&:hover, &:focus {
+		border-color: lighten($accent-color,20);
+		outline: 0;
+	}
+}
+
+#commentform {
+	textarea {
+		width: 95%;
+	}
+}

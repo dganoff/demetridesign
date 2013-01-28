@@ -1,0 +1,64 @@
+/* Sidebar styles: */
+#sidebar {
+	float: right;
+	width: $sidebar-width - $gutter;
+	padding: 1em ($gutter/2);
+	margin-bottom: 1.5em;
+	overflow: auto;
+	background: $sidebar-bg;
+	@include transition(.25s,ease);
+	@include border-radius(5px,5px,5px,5px);
+	border: 1px solid lighten($accent-color, 60);
+
+	// Type:
+
+	@media screen and (max-width: 720px) {
+		float: none;
+		width: auto;
+	}
+
+	
+	h1 {
+		padding: 0 0 0 0.25em;
+		line-height: 2;
+		// background-color: lighten(desaturate($link-color,90),10);
+		// @include border-radius(5px,5px,5px,5px);
+		border-bottom: 2px solid lighten($accent-color, 60);
+
+		// Type:
+		color: lighten($accent-color,30);
+		font-size: 1.25em;
+
+		// @include arrow-left(#333,9px,white); //styles any anchor tags in this nest for the arrow
+	}
+
+	h2 {
+		// Type:
+		font-style: normal;
+		font-size: 1em;
+
+		a {
+			text-decoration: none;
+		}
+	}
+
+	.sidebar-module {
+		@include sidebar-module;
+	}
+
+	.widget_twitter {
+		li {
+			border-bottom: 1px dashed lighten($accent-color, 40);
+			font-size: .9em;
+			line-height: 1.5em;
+
+			a {
+				display: inline;
+			}
+		}
+	}
+
+	.blogroll {
+		a {display: block;}
+	}
+}

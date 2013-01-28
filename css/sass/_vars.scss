@@ -1,0 +1,211 @@
+// colors: 
+$bg-color:#fffdf5;
+$header-color:white;
+$main-bg:white;
+$sidebar-bg:white;
+$home-main-bg: #333;
+$accent-color:#343838;
+$accent-color2: #FA6900;
+$link-color: #00B4CC; // BF4C40(red), 7D9D6C (green)
+
+
+// widths:
+$wrap-width: 95%;
+$gutter: 3%;
+$main-width: 70%;
+$sidebar-width: 26%;
+
+$home-gutter: 3%;
+
+// nav:
+$nav-height: 80px;
+
+// fonts:
+$fonts-headings: 'Ubuntu Condensed', sans-serif; //'Lusitana', Georgia, "Times New Roman", serif;
+$fonts-body: 'Adamina', Georgia, "Times New Roman", serif; //'Lusitana'
+
+// Functions:
+
+// Mixins:
+@mixin transition ($length,$anim,$type:all) {
+	-webkit-transition: $type $length $anim;
+	-moz-transition: $type $length $anim;
+	-o-transition: $type $length $anim;
+	transition: $type $length $anim;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content
+  }
+  @-moz-keyframes #{$name} {
+    @content
+  }
+  @-ms-keyframes #{$name} {
+    @content
+  }
+  @-o-keyframes #{$name} {
+    @content
+  }
+  @keyframes #{$name} {
+    @content
+  }
+}
+
+@mixin animation($value) {
+  -webkit-animation: $value;
+  -moz-animation: $value;
+  -ms-animation: $value;
+  -o-animation: $value;
+  animation: $value;
+}
+
+@mixin border-radius ($tl:5px,$tr:5px,$br:5px,$bl:5px) {
+	border-radius: $tl $tr $br $bl;
+}
+
+@mixin gradient ($top,$bottom) {
+	/* Safari 5.1+, Mobile Safari, Chrome 10+ */
+   background-image: -webkit-linear-gradient(top, $top, $bottom); 
+
+   /* Firefox 3.6+ */
+   background-image: -moz-linear-gradient(top, $top, $bottom);
+
+}
+
+@mixin selection ($color,$bg) {
+	::selection { color: $color; background: $bg}
+	::-moz-selection { color: $color; background: $bg}
+	::-webkit-selection { color: $color; background: $bg}
+}
+
+@mixin arrow-left ($bg,$border,$border-color) {
+	a {
+		float: right;
+		position: relative;
+		text-decoration: none;
+		padding: 0 .5em;
+		border-left: 5px solid $border-color;
+		background: $bg;
+		color: white;
+		@include transition(.1s,ease,padding);
+
+		&:before, &:after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			width: 0;
+			height: 0;
+		}
+
+		&:before {
+			left: -12px;
+			/* triangle: */
+			border-top: $border solid transparent;
+			border-bottom: $border solid transparent;
+			border-right: $border solid $border-color;
+	        /* Pull-up */
+	        margin-top: -$border;
+		}
+
+		&:after {
+			/* Smaller and different position triangle */
+	        left: -5px;
+	        border-top: ($border - 2px) solid transparent;
+	        border-bottom: ($border - 2px) solid transparent;
+	        border-right: ($border - 2px) solid $bg;
+	        margin-top: -($border - 2px);
+		}
+
+		&:hover {
+			background: lighten($bg,10);
+			padding: 0 .75em;
+			&:after {
+				border-right-color: lighten($bg,10);
+			}
+		}
+	}
+}
+
+@mixin arrow-top ($bg,$border,$border-color,$height) {
+	&:before, &:after {
+		content: "";
+		position: relative;
+		top: -$height;
+		width: 0;
+		height: 0;
+	}
+
+	&:before {
+        left: 50%;
+		/* triangle: */
+		border-top: $border solid transparent;
+		border-right: $border solid transparent;
+		border-left: $border solid transparent;
+		border-bottom: $border solid $border-color;
+        /* Pull-up */
+        margin-left: -$border;
+	}
+
+	&:after {
+		/* Smaller and different position triangle */
+        left: -50%;
+        top: -($height - $border + 2px);
+        border-top: ($border - 2px) solid transparent;
+        border-right: ($border - 2px) solid transparent;
+		border-left: ($border - 2px) solid transparent;
+        border-bottom: ($border - 2px) solid $bg;
+        margin-right: -($border - 2px);
+	}
+}
+
+@mixin typo($size) {
+	font-size: $size;
+	line-height: 1.65em;
+	margin: .25em 0;
+}
+
+@mixin sidebar-module {
+
+	margin-top: 1em;
+	// border-bottom: 1px dotted #ccc;
+
+	&:first-child {
+		margin-top: 0px;
+		border-bottom: 0px none;
+	}
+
+	&:last-child {
+		border-bottom: 0px none;
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+
+		li {
+			a {
+				// display: block;
+				line-height: 1em;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+
+			margin-bottom: .5em;
+		}
+	}
+}
+
+@mixin social-link {
+	display: inline-block;
+	padding-left: 30px;
+	padding-right: 10px;
+	border-bottom: 0px none;
+	border-right: $accent-color;
+
+	&:hover {
+		border-bottom: 0px none;
+	}
+}

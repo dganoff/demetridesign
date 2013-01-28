@@ -1,0 +1,138 @@
+/* Home Content styles: */
+.featured {
+	overflow: auto;
+	color: $bg-color;
+	
+	background: url(../../images/texture-dark.png) $home-main-bg;
+	
+	border-top: 4px solid $link-color;
+	border-bottom: 4px solid $link-color;
+	margin-bottom: 1em;
+
+	@media screen and (max-width: 720px) {
+		.page-wrap {
+			padding: 0 1em;
+		}
+	}
+}
+
+.home-intro {
+	padding: 1em ($home-gutter/2);
+	overflow: hidden;
+
+	@include animation(fadeInLoad 2s ease-out);
+
+	/* Type; */
+	font-family: $fonts-headings;
+
+	h1 {
+		margin: .25em 0;
+
+		// Type:
+		text-transform: uppercase;			
+	}
+
+	h2 {
+		margin: .25em 0;
+		color: lighten($accent-color,20);
+	}
+
+}
+
+.home-featured {
+	border: 1px solid rgba(white,.1);
+	// @include border-radius(1em,1em,1em,1em);
+	// background: white;
+	overflow: auto;
+	padding: 0 0 1em;
+
+	input, textarea {
+		width: 95%;
+		margin: 1em 0;
+	}
+
+	> section {
+		float: left;
+		width: 33% - $home-gutter;
+		padding: 1em ($home-gutter/2) 0 ($home-gutter/2);
+
+		> h1 {
+			text-align: center;
+			margin: 0 0 .5em;
+			text-transform: uppercase;
+
+			a { // preview heading button/link
+				padding-top: 90px;
+				display:block;
+				width: 180px;
+				margin: 0 auto;
+
+				&.blog {
+					background: url(../../images/preview-bg-blog.png) center top no-repeat;
+
+					&:hover {
+						background-position: center 10px;
+					}
+				}
+
+				&.work {
+					background: url(../../images/preview-bg-work.png) center top no-repeat;
+
+					&:hover {
+						background-position: center 10px;
+					}
+				}
+
+				&.contact {
+					background: url(../../images/preview-bg-contact.png) center top no-repeat;
+
+					&:hover {
+						background-position: center 10px;
+					}
+				}
+			}
+		}
+
+		@media screen and (max-width: 780px) {
+			float: none;
+			width: auto;
+		}
+
+		hgroup {
+			h1 {
+				font-size: 1.5em;
+				text-transform: none;
+				text-shadow: none;
+				text-align: left;
+
+				font-family: $fonts-headings;
+
+				a {
+					color: $accent-color;
+				}
+			}
+
+			h2 {
+				font-size: 1em;
+				font-style: none;
+			}
+		}
+
+		article {
+			margin-top: 1em;
+		}
+	}
+
+	.work-thumb {
+		margin: 1em 0;
+		opacity: 0.8;
+
+		@include transition(.2s,ease);
+		border-bottom: 0 none;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+}

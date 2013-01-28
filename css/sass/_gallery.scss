@@ -1,0 +1,47 @@
+/* Gallery: */
+.gallery {
+	padding: 0 .5em;
+}
+
+.gallery-item {
+	padding: 1em 45px;
+
+	@media screen and (max-width: 720px)  {
+		padding: 1em .5em;
+	}
+
+	.gallery-content {
+		float: left;
+		width: 50%;
+
+		@media screen and (max-width: 720px) {
+			float: none;
+			width: 100%;
+		}
+
+		a {
+			opacity: 0.85;
+
+			@media screen and (max-width: 720px) {
+				opacity: 1;
+			}
+
+			@include transition(.5s,ease);
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+
+		.gallery-info {
+			padding: 0 1em;
+
+			@media screen and (max-width: 720px) {
+				float: none;
+				width: auto;
+				border-left: none;	
+			}
+		}
+	}
+	
+}

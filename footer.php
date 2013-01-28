@@ -10,7 +10,7 @@
 	        </p>
 	        	        
 	        <p>
-		        This site was created with <a href="http://css3please.com/">CSS3</a> and <a href="http://www.html5rocks.com/en/">HTML5</a> on the <a href="http://wordpress.org/">WordPress</a> platform. It is best viewed on one of these modern browsers: <a href="https://www.google.com/chrome/?hl=en&brand=chmo" target="_blank">Chrome</a>, <a href="http://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a>  <br> &copy; <a href="http://www.demetridesign.com">DemetriDesign.com</a> 2013
+		        This site was created with <a href="http://css3please.com/">CSS3</a>, <a href="http://jquery.com/" target="_blank">jQuery</a> and <a href="http://www.html5rocks.com/en/">HTML5</a> on the <a href="http://wordpress.org/">WordPress</a> platform. <br> &copy; <a href="http://www.demetridesign.com">DemetriDesign.com</a> 2013
 	        </p>
         </div>
 
