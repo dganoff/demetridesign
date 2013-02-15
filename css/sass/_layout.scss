@@ -173,9 +173,19 @@ article {
 	@include border-radius(5px,5px,5px,5px);
 	border: 1px solid lighten($accent-color, 60);
 
+	@media screen and (max-width: 720px) {
+		float: none;
+		width: 90%;
+		margin: 0 auto .5em auto;
+	}
+
 	article {
 		margin-bottom: 2em;
 		border-bottom: 2px dotted lighten($accent-color,60);
+
+		@media (max-width: 500px) {
+			margin-bottom: 1em;
+		}
 
 		&:last-child {border-bottom: none;}
 
@@ -227,6 +237,10 @@ article {
 
 			@media screen and (min-width: 1200px) {
 				margin-left: 160px;
+			}
+
+			@media (max-width: 500px) {
+				display: none;
 			}
 
 			h2, h3 {
@@ -309,11 +323,6 @@ article {
 			font-family: Arial, Helvetica, sans-serif;
 			font-size: 11px;
 		}
-	}
-
-	@media screen and (max-width: 720px) {
-		float: none;
-		width: auto;
 	}
 }
 

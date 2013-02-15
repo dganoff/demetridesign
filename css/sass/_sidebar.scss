@@ -9,12 +9,11 @@
 	@include transition(.25s,ease);
 	@include border-radius(5px,5px,5px,5px);
 	border: 1px solid lighten($accent-color, 60);
-
-	// Type:
-
+	
 	@media screen and (max-width: 720px) {
 		float: none;
-		width: auto;
+		width: 90%;
+		margin: 0 auto .5em auto;
 	}
 
 	
