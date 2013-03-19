@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="page-wrap">
+<div class="page-wrap blog">
 
 	<section id="main">
         

@@ -4,7 +4,11 @@
 
     <div class="page-wrap">
         
-        <p>this is the featured section!</p>
+        <hgroup>
+                
+            <h1><?php the_title(); ?></h1>
+            
+        </hgroup>
 
     </div><!-- .page-wrap -->
 
@@ -23,15 +27,6 @@
   
         <article>
             
-            <hgroup>
-                
-                <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-                <h2><?php the_time(get_option('date_format')); ?> &middot; <?php the_author(); ?> &middot; <?php the_category(', '); ?></h2>
-                
-            </hgroup>
-            
-            <span class="comment-count"><?php comments_popup_link('Comment', '1 Comment', '% Comments'); ?></span>
-            
             <?php edit_post_link('Edit', '<span class="edit">  ' , '</span>'); ?>
                         
             <?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>  
@@ -41,9 +36,7 @@
             <?php endif; ?>
             
         </article>
-        
-        <?php comments_template( '', true ); ?> 
-  
+          
 		<?php endwhile; ?>  
         
     </section><!-- #main -->
@@ -52,7 +45,4 @@
     
 </div><!-- .page-wrap -->
 
-<?php get_footer(); ?>
-  
-<div class="spacer"></div>  
-<?php get_footer(); ?>
+<?php get_footer(); ?> 

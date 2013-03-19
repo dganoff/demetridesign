@@ -239,11 +239,9 @@ article {
 				margin-left: 160px;
 			}
 
-			@media (max-width: 500px) {
-				display: none;
-
-				.single & {
-					display:block;
+			.blog & { // only show blog titles in the blog landing page when on mobile screen size
+				@media (max-width: 500px) {
+					display: none;
 				}
 			}
 
