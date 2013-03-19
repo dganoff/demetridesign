@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="page-wrap">
+<div class="page-wrap single">
 
 	<section id="main">  
 
