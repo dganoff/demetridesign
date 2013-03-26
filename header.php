@@ -5,12 +5,9 @@
     
     <title><?php wp_title(''); ?></title>
 
-    <meta name="viewport" content="initial-scale=1.0; user-scalable=yes" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=yes" />
 
     <link rel="icon" href="/favicon.png"/>
-    
-    <!-- FlexSlider pieces -->
-    <link href="<?php bloginfo('stylesheet_directory'); ?>/css/flexslider.css" rel="stylesheet" type="text/css" media="screen" />
 
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/stylesheets/screen.css" type="text/css">
     

@@ -15,8 +15,11 @@
 		width: 50%;
 
 		@media screen and (max-width: 720px) {
+			box-sizing: border-box;
+			padding: 0 1.5em;
 			float: none;
 			width: 100%;
+			text-align: center;
 		}
 
 		a {
@@ -43,5 +46,92 @@
 			}
 		}
 	}
-	
+}
+
+.work-group {
+}
+
+.work-item {
+	@extend .clearfix;
+	position: relative;
+	overflow: hidden;
+	float: left;
+	@include box-sizing(border-box);
+	width: 33.33%-(1.5%);
+	margin-right: 1.5%;
+	margin-bottom: 1em;
+	border: 4px solid rgba($link-color,0.25);
+	@include border-radius(8px);
+
+	@media (max-width: 900px) {
+		width: 50%-(1.5%);
+	}
+
+	@media (max-width: 600px) {
+		width: 100%;
+		margin-right: 0;
+	}
+
+	&:hover {
+		border-color: transparent;
+
+		.work-thumb {
+			@include transform(scale(0.85));
+		}
+	}
+
+	.work-thumb {
+		display: block;
+		min-width: 100%;
+		z-index: 10;
+		@include transition(all .25s ease);
+	}
+
+	&:hover .work-info {
+		opacity: 1;
+
+		.find-out-more {
+		  @include animation( slideIn .75s cubic-bezier(0.45, 0.95, 0.15, 0.81) );
+		}
+	}
+  
+	.work-info {
+		z-index: 11;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		display: block;
+		@include box-sizing(border-box);
+		padding: 1em;
+		background: rgba(#00B4CC,.9);
+		color: white;
+		font-size: 75%;
+		line-height: 1.45em;
+		text-decoration: none;
+		text-align: center;
+		opacity: 0;
+		@include border-radius( 5px );
+		@include transition( all .5s ease );
+
+		.find-out-more {
+			color: #343838;
+			text-decoration: none;
+			font-size: 1.5em;
+			font-weight: bold;
+			position: absolute;
+			bottom: 0;
+			right: 1em;
+		}
+
+		h1 {
+			color: white;
+			@include text-shadow( 0px 1px 1px rgba(#343838,.5) );
+		}
+
+		code {
+			font-size: 1.25em;
+			@include text-shadow( 0px 1px 1px rgba(#343838,.5) );
+		}
+	}
 }

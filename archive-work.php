@@ -31,84 +31,58 @@ Template Name: Works
     </nav>
 
 	<div class="gallery">
+		
 
-		<div class="flex-container">
-	        <div class="flexslider">
-	            <ul class="slides">
+	    <?php
+			$args = array( 'post_type' => 'work', 'posts_per_page' => 10 );
+			$loop = new WP_Query( $args );
+		?>
 
-					<?php
-					$args = array( 'post_type' => 'work', 'posts_per_page' => 10 );
-					$loop = new WP_Query( $args );
-					?>
+		<h1>Website Projects</h1>
+		
+		<div class="work-group">
+			<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+
+				<?php // Let's get the data we need	
+
+					$objective = get_post_meta( $post->ID, 'Objective', true );
+					$involvement = get_post_meta( $post->ID, 'Involvement', true );
+					$address = get_post_meta( $post->ID, 'address', true );
 					
-					<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+					$work_clients = strip_tags( get_the_term_list( $post->ID, 'clients', '', ', ', '' ) );
+					$technologies = strip_tags( get_the_term_list( $post->ID, 'technology', '', ', ', '' ) );
+					
+					$work_image = new WP_Query( // Start a new query for our videos
+					array(
+						'post_parent' => $post->ID, // Get data from the current post
+						'post_type' => 'attachment', // Only bring back attachments
+						'post_mime_type' => 'image', // Only bring back attachments that are videos
+						'posts_per_page' => '1', // Show us the first result
+						'post_status' => 'inherit', // Attachments require "inherit" or "all"
+						)
+					);
+				?>
 
-						<?php // Let's get the data we need	
-							$objective = get_post_meta( $post->ID, 'Objective', true );
-							$involvement = get_post_meta( $post->ID, 'Involvement', true );
-							$address = get_post_meta( $post->ID, 'address', true );
-							
-							$work_clients = strip_tags( get_the_term_list( $post->ID, 'clients', '', ', ', '' ) );
-							$technologies = strip_tags( get_the_term_list( $post->ID, 'technology', '', ', ', '' ) );
-							
-							$work_image = new WP_Query( // Start a new query for our videos
-							array(
-								'post_parent' => $post->ID, // Get data from the current post
-								'post_type' => 'attachment', // Only bring back attachments
-								'post_mime_type' => 'image', // Only bring back attachments that are videos
-								'posts_per_page' => '1', // Show us the first result
-								'post_status' => 'inherit', // Attachments require "inherit" or "all"
-								)
-							);
-						?>
+		    	<div class="work-item">
+	
+					<a href="<?php echo $address ?>" class="work-info">
+	
+    					<h1><?php the_title(); ?></h1>
 
-	                    <li>
-
-	                    	<div class="gallery-item">                        	
-	            
-				                <h1><a href="<?php echo $address ?>" target="_blank" title="Go to Live Site..."><?php the_title(); ?></a></h1>
-				                <h2>Client: <?php echo $work_clients ?></h2>
-
-								<section class="gallery-content">
-	                	
-				                    <a href="<?php echo $address ?>" target="_blank" title="Go to Live Site...">
-
-				                    <?php while ( $work_image->have_posts() ) : $work_image->the_post(); ?>
-				                    	<img src="<?php echo $post->guid; ?>">
-				                    <?php endwhile; ?>
-
-				                    </a>
-				                
-				                </section>
-
-								<section class="gallery-content">									
-									
-									<div class="gallery-info">
-		            
-					                    <h1>My Involvement</h1>
-										<p><?php echo $involvement ?></p>
-
-										<h1>Objective</h1>
-										<p><?php echo $objective ?></p>
-					                    
-					                    <h1>Technologies</h1>
-					                    <code><?php echo $technologies; ?></code>
-					                
-					                </div>
-									
-								</section>
-
-				                
-
-							</div><!-- .gallery-item -->
-
-	                    </li>
-
-					<?php endwhile; ?>
-
-	            </ul>
-	        </div><!-- .flexslider -->
-	    </div><!-- .flex-container -->
+    					<code><?php echo $technologies; ?></code>
+    	
+    					<p class="find-out-more" target="_blank">View Site &raquo;</p>
+	
+					</a>
+		    	
+					<?php while ( $work_image->have_posts() ) : $work_image->the_post(); ?>
+	                	<img class="work-thumb" src="<?php echo $post->guid; ?>">
+	                <?php endwhile; ?>
+		    	
+		    	</div><!-- .work-item -->
+				
+			<?php endwhile; ?>
+		</div><!-- .work-group -->
 
     </div><!-- .gallery -->
 

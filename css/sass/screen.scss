@@ -4,6 +4,7 @@ $experimental-support-for-svg: true;
 @import "normalize";
 @import "vars";
 @import "animations";
+@import "grid";
 @import "layout";
 @import "forms";
 @import "header";
@@ -11,3 +12,5 @@ $experimental-support-for-svg: true;
 @import "homepage";
 @import "gallery";
 @import "footer";
+
+@import "flexslider";

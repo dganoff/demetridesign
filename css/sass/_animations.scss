@@ -531,3 +531,15 @@ $delay: 0s;
   50% { opacity: 0;}
   100% { opacity: 1; -webkit-transform: translateY(0); -moz-transform: translateY(0);}
 }
+
+// work gallery animations:
+@include keyframes(slideIn) {
+  0%, 55% {
+    -webkit-transform: translateX(200px);
+    -moz-transform: translateX(75px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+  }
+}
