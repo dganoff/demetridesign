@@ -33,7 +33,7 @@ hr {
 a:link, a:visited {
 	color: $link-color;
 	text-decoration: none;
-	@include transition(.25s,ease);
+	@include transition(.25s ease);
 }
 
 a:hover {
@@ -47,7 +47,7 @@ a.threedlink {
 	font-weight: bold;
 
 	text-shadow: 3px 3px 0px rgba(#FF513D,.5), -3px -3px 0px rgba($link-color,.5);
-	@include transition(.25s,ease);
+	@include transition(.25s ease);
 	
 	&:hover {
 		color: #222;
@@ -107,28 +107,6 @@ article {
 
 	p {
 		text-indent: 1em;
-	}
-}
-
-.logo {
-	position: relative;
-	display:block;
-	float: left;
-	width: 284px;
-	height: 80px;
-	margin-left: .5em;
-	background: url(../../images/logo.png) left center no-repeat;
-
-	&:active {
-		top: 2px;
-	}
-
-	@media screen and (max-width: 650px) {
-		float: none;
-		margin: 0 auto;
-		width: 166px;
-		height: 35px;
-		background: url(../../images/logo-sm.png) left center no-repeat;
 	}
 }
 
