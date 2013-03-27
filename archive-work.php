@@ -65,13 +65,13 @@ Template Name: Works
 
 		    	<div class="work-item">
 	
-					<a href="<?php echo $address ?>" class="work-info">
+					<a class="work-info" href="<?php echo $address ?>" target="_blank">
 	
     					<h1><?php the_title(); ?></h1>
 
     					<code><?php echo $technologies; ?></code>
     	
-    					<p class="find-out-more" target="_blank">View Site &raquo;</p>
+    					<p class="find-out-more">View Site &raquo;</p>
 	
 					</a>
 		    	

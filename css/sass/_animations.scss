@@ -536,7 +536,7 @@ $delay: 0s;
 @include keyframes(slideIn) {
   0%, 55% {
     -webkit-transform: translateX(200px);
-    -moz-transform: translateX(75px);
+    -moz-transform: translateX(200px);
   }
   100% {
     -webkit-transform: translateX(0px);
