@@ -70,6 +70,7 @@
 	@media (max-width: 600px) {
 		width: 100%;
 		margin-right: 0;
+		border: none;
 	}
 
 	&:hover {
@@ -114,6 +115,11 @@
 		@include border-radius( 5px );
 		@include transition( all .5s ease );
 
+		@media (max-width: 600px) {
+			top: auto;
+			opacity: 1;
+		}
+
 		.find-out-more {
 			color: #343838;
 			text-decoration: none;
@@ -122,6 +128,16 @@
 			position: absolute;
 			bottom: 0;
 			right: 1em;
+
+			@media (max-width: 600px) {
+				position: relative;
+				text-align: center;
+				text-transform: uppercase;
+				margin: .5em 0;
+				font-size: 12px;
+				font-family: Helvetica, Arial, sans-serif;
+				color: darken($link-color,18);
+			}
 		}
 
 		h1 {

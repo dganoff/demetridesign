@@ -64,7 +64,7 @@ Template Name: Works
 				?>
 
 		    	<div class="work-item">
-	
+					
 					<a class="work-info" href="<?php echo $address ?>" target="_blank">
 	
     					<h1><?php the_title(); ?></h1>
@@ -74,7 +74,7 @@ Template Name: Works
     					<p class="find-out-more">View Site &raquo;</p>
 	
 					</a>
-		    	
+	
 					<?php while ( $work_image->have_posts() ) : $work_image->the_post(); ?>
 	                	<img class="work-thumb" src="<?php echo $post->guid; ?>">
 	                <?php endwhile; ?>

@@ -20,3 +20,18 @@ input, textarea, select {
 		width: 95%;
 	}
 }
+
+input[type="submit"] {
+	border: none;
+	background-color: $link-color;
+	padding: .5em;
+
+	// Font:
+	font-family: 'Ubuntu Condensed', sans-serif;
+	color: white;
+	text-transform: uppercase;
+
+	&:hover, &:active, &:focus {
+		background-color: darken($link-color,6);
+	}
+}
