@@ -16,7 +16,7 @@
     <link href="http://fonts.googleapis.com/css?family=Adamina&subset=latin" rel="stylesheet" type="text/css">
 
     <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/scripts/modernizr.min.js"></script>
     <![endif]-->
     
     <?php wp_head(); ?>

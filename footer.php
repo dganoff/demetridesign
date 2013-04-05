@@ -61,6 +61,9 @@
 		});
 	</script>
 
+
+	<script src="<?php bloginfo('template_url'); ?>/scripts/app.js"></script>
+
 	<script type="text/javascript">
 
 	  var _gaq = _gaq || [];

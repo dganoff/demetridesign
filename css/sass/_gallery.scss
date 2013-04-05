@@ -89,9 +89,10 @@
 	}
 
 	&:hover .work-info {
-		opacity: 1;
+		height:100%;
 
 		.find-out-more {
+			display: block;
 		  @include animation( slideIn .75s cubic-bezier(0.45, 0.95, 0.15, 0.81) );
 		}
 	}
@@ -99,28 +100,30 @@
 	.work-info {
 		z-index: 11;
 		position: absolute;
-		top: 0;
+		height: 45px;
 		bottom: 0;
 		width: 100%;
 		display: block;
 		@include box-sizing(border-box);
 		padding: 1em;
+		background: $link-color;
 		background: rgba(#00B4CC,.9);
 		color: white;
 		font-size: 75%;
 		line-height: 1.45em;
 		text-decoration: none;
 		text-align: center;
-		opacity: 0;
 		@include border-radius( 5px );
 		@include transition( all .5s ease );
 
 		@media (max-width: 600px) {
 			top: auto;
+			height: auto;
 			opacity: 1;
 		}
 
 		.find-out-more {
+			display: none;
 			color: #343838;
 			text-decoration: none;
 			font-size: 1.5em;
@@ -130,6 +133,7 @@
 			right: 1em;
 
 			@media (max-width: 600px) {
+				display: block;
 				position: relative;
 				text-align: center;
 				text-transform: uppercase;
@@ -142,6 +146,7 @@
 
 		h1 {
 			color: white;
+			margin: .1em 0;
 			@include text-shadow( 0px 1px 1px rgba(#343838,.5) );
 		}
 

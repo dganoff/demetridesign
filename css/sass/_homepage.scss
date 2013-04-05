@@ -126,7 +126,7 @@
 	}
 
 	.work-thumb {
-		display: inline-block;
+		display: block;
 		margin: 0.5em 0;
 		border: 4px solid rgba($accent-color,0.5);
 		@include border-radius(4px);
