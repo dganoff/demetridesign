@@ -1,2 +1,3 @@
-WordPress theme for Demetri Ganoff's portfolio website: demetridesign.com
-Designed and built entirely by Demetri Ganoff.
+Demetri Ganoff's Portfolio WP Theme
+===============
+It's awesome.
