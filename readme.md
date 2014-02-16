@@ -1,3 +1,3 @@
 Demetri Ganoff's Portfolio WP Theme
 ===============
-It's awesome.
+No longer used.
